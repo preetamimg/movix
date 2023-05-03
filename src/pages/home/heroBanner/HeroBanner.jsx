@@ -15,7 +15,7 @@ const HeroBanner = () => {
   useEffect(()=> {
     const BannerData = data?.results?.[Math.floor(Math.random() * 20)]
     setBannerInfo(BannerData)
-    // console.log(bannerInfo)
+    console.log(bannerInfo)
 
   }, [data])
   return (
@@ -23,14 +23,14 @@ const HeroBanner = () => {
     {!loading ? (
     <div className="heroSection container-fluid mb-3">
       <div className="container heroSectionInner heroSectionBefore position-relative px-0">
-        <Img className='heroImg w-100' src={url?.backdrop + bannerInfo?.backdrop_path} alt={'hero section image'}/>
+        <Img className='heroImg w-100' width={'960'} height={'540'} src={url?.backdrop + bannerInfo?.backdrop_path} alt={'hero section image'}/>
         <div className="row heroDetailBox position-absolute w-100 mx-0">
           <div className="col-lg-6 col-md-8 col-10 movieTitle">{bannerInfo?.title}</div>
           <div className="col-12 mt-sm-3 mt-2 mt-lg-4">
             <div className="row mx-0">
               <div className="col-auto imdbRating ps-0">
                 <div className="d-flex align-items-center">
-                  <img src={imdbLogo} alt="imdb logo" className='me-2' />
+                  <img src={imdbLogo} alt="imdb logo" width={'36'} height={'18'} className='me-2' />
                   {bannerInfo?.vote_average}
                 </div>
                 </div>

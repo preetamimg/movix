@@ -48,7 +48,7 @@ const Cast = ({ data, loading }) => {
                                 <div className="row mx-0 row-cols-6">
                                     <div className="col-12">
                                         <div className="profileImg mx-auto">
-                                            <Img src={item?.profile_path ? url?.profile + item?.profile_path : avatar } alt={"Cast Image"}/>
+                                            <Img src={item?.profile_path ? url?.profile + item?.profile_path : avatar } width={'125'} height={'125'} alt={"Cast Image"}/>
                                         </div>
                                     </div>
                                     <div className="col-12 name">{item?.name}</div>

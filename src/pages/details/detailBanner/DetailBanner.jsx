@@ -42,7 +42,7 @@ const DetailBanner = ({video, crew}) => {
                                 <>
                                     <div className="col-md-6 detailPosterIg px-0">
                                         <div className="posterImgWrapper">
-                                            <Img className='w-100' src={data?.poster_path ? url.backdrop + data?.poster_path : PosterFallback}/>
+                                            <Img className='w-100' width={'400'} height={'600'} src={data?.poster_path ? url.backdrop + data?.poster_path : PosterFallback}/>
                                         </div>
                                     </div>
                                     <div className="col-md-6 text-white px-0 mt-3 mt-md-0 detailSection">
