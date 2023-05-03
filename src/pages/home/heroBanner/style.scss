@@ -1,0 +1,225 @@
+.heroSection {
+    position: relative;
+    // &::before {
+    //     position: absolute;
+    //     content: '';
+    //     width: 100%;
+    //     height: 50px;
+    //     left: 0;
+    //     bottom: 0;
+    //     z-index: 2;
+    //     background: linear-gradient(180deg , rgba(4,21,45,0) 0%, #04152d 79.17%);
+    // }
+    & .lazy-load-image-background {
+        display: block !important;
+        & .heroImg {
+            height: 100%;
+            object-fit: cover;
+            overflow: hidden;
+        }
+    }
+    & .heroSectionInner {
+        height: 600px;
+        border-radius: 30px;
+        overflow: hidden;
+        &.heroSectionBefore {
+            &::before {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                background-color: rgba(0,0,0,0.4);
+            }
+        }
+        & .heroDetailBox {
+            z-index: 2;
+            top: 50%;
+            left: 30px;
+            transform: translateY(-50%);
+            & .movieTitle {
+                font-size: 60px;
+                font-weight: 700;
+                color: white;
+                line-height: 70px;
+            }
+            & .imdbRating {
+                font-size: 16px;
+                color: white;
+                border-right: 2px solid white;
+                & img {
+                    height: 18px;
+                }
+            }
+            & .releaseDate {
+                font-size: 16px;
+                color: white;
+                // border-right: 2px solid white;
+            }
+            & .watchBtn {
+                font-size: 16px;
+                color: white;
+                background-color: #ad241a;
+                border-radius: 12px;
+                padding: 8px 16px;
+                border: 2px solid #ad241a;
+                &:is(:active, :hover, :focus) {
+                    background-color: darken(#ad241a, 51);
+                    border-color: darken(#ad241a, 51);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1399px) {
+    .heroSection {
+        & .lazy-load-image-background {
+            & .heroImg {
+            }
+        }
+        & .heroSectionInner {
+            height: 550px;
+            border-radius: 35px;
+            &::before {
+            }
+            & .heroDetailBox {
+                & .movieTitle {
+                    font-size: 56px;
+                    line-height: 66px;
+                }
+                & .imdbRating {
+                    & img {
+                    }
+                }
+                & .releaseDate {
+                }
+                & .watchBtn {
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1199px) {
+    .heroSection {
+        & .lazy-load-image-background {
+            & .heroImg {
+            }
+        }
+        & .heroSectionInner {
+            height: 500px;
+            border-radius: 25px;
+            &::before {
+            }
+            & .heroDetailBox {
+                & .movieTitle {
+                    font-size: 54px;
+                    line-height: 64px;
+                }
+                & .imdbRating {
+                    & img {
+                    }
+                }
+                & .releaseDate {
+                }
+                & .watchBtn {
+                }
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+    .heroSection {
+        & .lazy-load-image-background {
+            & .heroImg {
+            }
+        }
+        & .heroSectionInner {
+            height: 400px;
+            &::before {
+            }
+            & .heroDetailBox {
+                & .movieTitle {
+                    font-size: 44px;
+                    line-height: 54px;
+                }
+                & .imdbRating {
+                    font-size: 14px;
+                    & img {
+                        height: 14px;
+                    }
+                }
+                & .releaseDate {
+                    font-size: 14px;
+                }
+                & .watchBtn {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 767px) {
+    .heroSection {
+        & .lazy-load-image-background {
+            & .heroImg {
+            }
+        }
+        & .heroSectionInner {
+            height: 300px;
+            border-radius: 20px;
+            &::before {
+            }
+            & .heroDetailBox {
+                & .movieTitle {
+                    font-size: 34px;
+                    line-height: 44px;
+                }
+                & .imdbRating {
+
+                    & img {
+                    }
+                }
+                & .releaseDate {
+                }
+                & .watchBtn {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 575px) {
+    .heroSection {
+        & .lazy-load-image-background {
+            & .heroImg {
+            }
+        }
+        & .heroSectionInner {
+            height: 180px;
+            &::before {
+            }
+            & .heroDetailBox {
+                left: 0px;
+                & .movieTitle {
+                    font-size: 20px;
+                    line-height: 28px;
+                }
+                & .imdbRating {
+                    font-size: 12px;
+                    & img {
+                    }
+                }
+                & .releaseDate {
+                    font-size: 12px;
+                }
+                & .watchBtn {
+                    padding: 6px 12px;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+}

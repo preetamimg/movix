@@ -1,0 +1,49 @@
+.header {
+    position: relative;
+    background-image: linear-gradient(to bottom, #141b29, #0c111b 300px);
+    & .navLink {
+        cursor: pointer;
+        &.navIcon {
+            font-size: 17px;
+        }
+        &:hover {
+            color: rgb(254, 108, 108) !important;
+        }
+    }
+    & .mobileMenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        transform: translateY(-200%);
+        background-color: white;
+    }
+    & .searchBox {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        transform: translateY(-300%);
+        & .closeSearch {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    }
+    &.showMenu {
+        // background-color: #04152d;
+        & .mobileMenu {
+            transform: translateY(0);
+            z-index: 99;
+        }
+    }
+    &.showSearch {
+        // background-color: #04152d;
+        & .searchBox {
+            transform: translateY(0);
+            z-index: 99;
+        }
+    }
+}

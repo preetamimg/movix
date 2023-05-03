@@ -1,0 +1,113 @@
+:root {
+    --black: #04152d;
+    --black2: #041226;
+    --black3: #020c1b;
+    --black-lighter: #1c4b91;
+    --black-light: #173d77;
+    --pink: #da2f68;
+    --orange: #f89e00;
+    --gradient: linear-gradient(98.37deg, #f89e00 0.99%, #da2f68 100%);
+}
+.switchingTabs {
+    height: 34px;
+    background-color: rgb(81, 81, 81);
+    border-radius: 20px;
+    padding: 2px 4px;
+    .tabItems {
+        display: flex;
+        align-items: center;
+        height: 30px;
+        position: relative;
+        .tabItem {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            color: white;
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+            transition: color ease 0.3s;
+            &.active {
+                color: white;
+            }
+        }
+        .movingBg {
+            height: 30px;
+            width: 100px;
+            border-radius: 15px;
+            background-image: var(--gradient);
+            position: absolute;
+            left: 0;
+            transition: left cubic-bezier(0.88, -0.35, 0.565, 1.35) 0.4s;
+        }
+    }
+}
+
+@media (max-width: 1399px) {
+.switchingTabs {
+    .tabItems {
+        .tabItem {
+            &.active {
+            }
+        }
+        .movingBg {
+        }
+    }
+}
+}
+@media (max-width: 1199px) {
+    .switchingTabs {
+        .tabItems {
+            .tabItem {
+                &.active {
+                }
+            }
+            .movingBg {
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+    .switchingTabs {
+        .tabItems {
+            .tabItem {
+                &.active {
+                }
+            }
+            .movingBg {
+            }
+        }
+    }
+}
+@media (max-width: 767px) {
+    .switchingTabs {
+        .tabItems {
+            .tabItem {
+                &.active {
+                }
+            }
+            .movingBg {
+            }
+        }
+    }
+}
+@media (max-width: 575px) {
+    .switchingTabs {
+        .tabItems {
+            .tabItem {
+                width: 80px;
+                font-size: 12px;
+                height: 28px;
+                &.active {
+                }
+            }
+            .movingBg {
+                width: 80px;
+                height: 28px;
+            }
+        }
+    }
+}

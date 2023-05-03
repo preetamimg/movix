@@ -1,0 +1,186 @@
+.detailBanner {
+    & .detailBannerInner {
+        & .detailBannerWrapper {
+            & .detailPosterIg {
+                &.loader {
+                    & .posterImgWrapper {
+                        width: 400px;
+                        aspect-ratio: 1/1.5;
+                    }
+                }
+                & .posterImgWrapper {
+                    // aspect-ratio: 1/1;
+                    // border-radius: 20px;
+                    overflow: hidden;
+                    max-width: 400px;
+                    margin-inline: auto;
+                    & span {
+                        width: 100%;
+                        display: block !important;
+                        // aspect-ratio: 1/1.5;
+                    }
+                    & img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+            & .detailSection {
+                & .title {
+                    font-size: 32px;
+                    opacity: 0.9;
+                    line-height: 38px;
+                    margin-bottom: 8px;
+                }
+                & .subTitle {
+                    font-size: 16px;
+                    opacity: 0.7;
+                    margin-bottom: 8px;
+                }
+                & .genres {
+                    margin: 10px 0;
+                    & .genreText {
+                        font-size: 12px;
+                        opacity: 0.9;
+                        padding: 3px 12px;
+                        border-radius: 20px;
+                        background-image: linear-gradient(98.37deg, #f89e00 0.99%, #da2f68 100%);
+                    }
+                }
+                & .rating {
+                    width: 55px;
+                    & .CircularProgressbar-text {
+                        fill: white;
+                        opacity: 0.9;
+                        font-size: 30px;
+                    }
+                }
+                .playbtn {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    opacity: 0.9;
+                    cursor: pointer;
+                    svg {
+                        width: 50px;
+                    }
+                    .text {
+                        font-size: 18px;
+                        transition: all 0.7s ease-in-out;
+                    }
+                    .triangle {
+                        stroke-dasharray: 240;
+                        stroke-dashoffset: 480;
+                        stroke: white;
+                        transform: translateY(0);
+                        transition: all 0.7s ease-in-out;
+                    }
+                    .circle {
+                        stroke: white;
+                        stroke-dasharray: 650;
+                        stroke-dashoffset: 1300;
+                        transition: all 0.5s ease-in-out;
+                    }
+                    &:hover {
+                        .text {
+                            color: var(--pink);
+                        }
+                        .triangle {
+                            stroke-dashoffset: 0;
+                            opacity: 1;
+                            stroke: var(--pink);
+                            animation: trailorPlay 0.7s ease-in-out;
+                        }
+                        .circle {
+                            stroke-dashoffset: 0;
+                            stroke: var(--pink);
+                        }
+                    }
+                }
+                .overview {
+                    & .heading {
+                        font-size: 20px;
+                        margin-bottom: 4px;
+                        margin-top: 10px;
+                        opacity: 0.9;
+                    }
+                    & .overViewText {
+                        font-size: 14px;
+                        opacity: 0.8;
+                        margin-bottom: 10px;
+                    }
+                }
+                & .info {
+                    font-size: 14px;
+                    & span {
+                        opacity: 0.8;
+                        &:first-child {
+                            font-weight: 600;
+                            opacity: 0.9;
+                        }
+                    }
+                }
+                &.loader {
+                    & .title {
+                        height: 28px;
+                        margin-bottom: 15px;
+                    }
+                    & .subTitle {
+                        height: 22px;
+                        width: 75%;
+                    }
+                    & .genreSkeletonText {
+                        height: 20px;
+                        width: 80px;
+                        border-radius: 20px;
+                    }
+                    & .rating {
+                        height: 50px;
+                        width: 50px;
+                        border-radius: 50%;
+                    }
+                    & .playbtn {
+                        & span {
+                            &:first-child {
+                                height: 50px;
+                                width: 50px;
+                                border-radius: 50%;
+                            }
+                            &:last-child {
+                                height: 20px;
+                                width: 80px;
+                            }
+                        }
+                    }
+                    & .overview {
+                        & .heading {
+                            height: 20px;
+                            width: 50%;
+                            margin-bottom: 12px;
+                        }
+                        & .overViewText {
+                            height: 14px;
+                        }
+                    }
+                    & .info {
+                        height: 16px;
+                        width: 80px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .detailBanner {
+        & .detailSection {
+            & .title {
+                font-size: 22px !important;
+                line-height: 28px !important;
+            }
+        }
+    }
+}
