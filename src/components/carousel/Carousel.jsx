@@ -40,10 +40,10 @@ const Carousel = ({data, loading, endPoint}) => {
     return <div className="carousel position-relative mt-3 mt-md-3">
         <div className="carouselInner">
             <BsFillArrowLeftCircleFill
-            className="carouselLeftNav arrow"
+            className="carouselLeftNav arrow d-none d-md-block"
             onClick={()=> navigation('left')}/>
             <BsFillArrowRightCircleFill
-            className="carouselRightNav arrow"
+            className="carouselRightNav arrow d-none d-md-block"
             onClick={()=> navigation('right')}/>
             {!loading ? (
                 <div className="carouselItems flex-nowrap mx-0 g-2 g-sm-3 g-lg-4 row row-cols-3 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6" ref={CarouselContainer}>
@@ -53,7 +53,7 @@ const Carousel = ({data, loading, endPoint}) => {
                             <div key={item.id} className="carouselItem col"
                             onClick={()=> navigate(`/${item.media_type || endPoint}/${item.id}`)}>
                                 <div className="posterBlock">
-                                    <Img src={posterUrl} width={'196'} height={'294'} alt={'Poster Image'} />
+                                    <Img src={posterUrl} width={'196'} height={'294'} alt={"movie poster image"}/>
                                     <CircleRating rating={item.vote_average.toFixed(1)}/>
                                     {/* <Genres data={item.genre_ids}/> */}
                                 </div>
@@ -62,7 +62,7 @@ const Carousel = ({data, loading, endPoint}) => {
                                         {item.title || item.name}
                                     </span>
                                     <span className="date">
-                                        {dayjs(item.release_Date).format("MMM D, YYYY")}
+                                        {dayjs(item.release_date).format("MMM D, YYYY")}
                                     </span>
                                 </div>
                             </div>

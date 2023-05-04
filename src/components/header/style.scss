@@ -1,6 +1,11 @@
 .header {
     position: relative;
     background-image: linear-gradient(to bottom, #141b29, #0c111b 300px);
+    & .logoBox {
+        & img {
+            cursor: pointer;
+        }
+    }
     & .navLink {
         cursor: pointer;
         &.navIcon {
@@ -16,7 +21,7 @@
         left: 0;
         width: 100%;
         transform: translateY(-200%);
-        background-color: white;
+        background-image: linear-gradient(to bottom, #141b29, #0c111b 300px);
     }
     & .searchBox {
         position: absolute;
@@ -24,6 +29,10 @@
         left: 0;
         width: 100%;
         transform: translateY(-300%);
+        // background-image: linear-gradient(to bottom, #141b29, #0c111b 300px);
+        & .form-control {
+            // background-image: linear-gradient(to bottom, #141b29, #0c111b 300px);
+        }
         & .closeSearch {
             position: absolute;
             top: 50%;

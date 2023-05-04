@@ -33,7 +33,7 @@ const DetailBanner = ({video, crew}) => {
 
     return (
         <>
-        <div className="container-fluid detailBanner px-0">
+        <div className="container-fluid detailBanner px-0 mb-4">
             <div className="container detailBannerInner px-0">
                 <div className="row mx-0 detailBannerWrapper justify-content-center">
                     <div className="col-lg-9 px-0">

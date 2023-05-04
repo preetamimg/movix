@@ -1,17 +1,36 @@
 .videosSection {
     position: relative;
-    margin-bottom: 50px;
     .sectionHeading {
         font-size: 24px;
         color: white;
-        margin-bottom: 25px;
+        margin-bottom: 15px;
+        padding-inline: 0.75rem;
+    }
+    .arrow {
+        font-size: 35px;
+        color: black;
+        position: absolute;
+        top: 54%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        opacity: 0.8;
+        transition: 0.3s ease-in-out;
+        z-index: 1;
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+    .carouselLeftNav {
+        left: 30px;
+    }
+    .carouselRightNav {
+        right: 30px;
     }
     .videos {
         overflow-x: auto;
         .videoItem {
             cursor: pointer;
             .videoThumbnail {
-                margin-bottom: 15px;
                 position: relative;
                 & span {
                     width: 100%;
@@ -68,31 +87,274 @@
     }
 
     .videoSkeleton {
-        display: flex;
-        gap: 10px;
-        overflow-x: auto;
-        margin-right: -20px;
-        margin-left: -20px;
-        padding: 0 20px;
+        overflow: hidden;
         .skItem {
-            width: 150px;
-            flex-shrink: 0;
             .thumb {
                 width: 100%;
                 aspect-ratio: 16 / 9;
                 border-radius: 12px;
                 margin-bottom: 10px;
             }
-            .row {
-                height: 20px;
+            .line1 {
+                height: 18px;
                 width: 100%;
-                border-radius: 10px;
                 margin-bottom: 10px;
             }
-            .row2 {
-                height: 20px;
+            .line2 {
+                height: 15px;
                 width: 75%;
-                border-radius: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1399px) {
+    .videosSection {
+        .sectionHeading {
+        }
+        .arrow {
+        }
+        .carouselLeftNav {
+        }
+        .carouselRightNav {
+        }
+        .videos {
+            .videoItem {
+                .videoThumbnail {
+                    & span {
+                    }
+                    img {
+                    }
+                    svg {
+                    }
+                    .triangle {
+                    }
+                    .circle {
+                    }
+                    &:hover {
+                        img {
+                        }
+                        .triangle {
+                        }
+                        .circle {
+                        }
+                    }
+                }
+                .videoTitle {
+                }
+            }
+        }
+    
+        .videoSkeleton {
+            .skItem {
+                .thumb {
+                }
+                .line1 {
+                }
+                .line2 {
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1199px) {
+    .videosSection {
+        .sectionHeading {
+        }
+        .arrow {
+        }
+        .carouselLeftNav {
+        }
+        .carouselRightNav {
+        }
+        .videos {
+            .videoItem {
+                .videoThumbnail {
+                    & span {
+                    }
+                    img {
+                    }
+                    svg {
+                    }
+                    .triangle {
+                    }
+                    .circle {
+                    }
+                    &:hover {
+                        img {
+                        }
+                        .triangle {
+                        }
+                        .circle {
+                        }
+                    }
+                }
+                .videoTitle {
+                }
+            }
+        }
+    
+        .videoSkeleton {
+            .skItem {
+                .thumb {
+                }
+                .line1 {
+                }
+                .line2 {
+                }
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+    .videosSection {
+        .sectionHeading {
+            font-size: 22px;
+        }
+        .arrow {
+        }
+        .carouselLeftNav {
+        }
+        .carouselRightNav {
+        }
+        .videos {
+            .videoItem {
+                .videoThumbnail {
+                    & span {
+                    }
+                    img {
+                    }
+                    svg {
+                    }
+                    .triangle {
+                    }
+                    .circle {
+                    }
+                    &:hover {
+                        img {
+                        }
+                        .triangle {
+                        }
+                        .circle {
+                        }
+                    }
+                }
+                .videoTitle {
+                }
+            }
+        }
+    
+        .videoSkeleton {
+            .skItem {
+                .thumb {
+                }
+                .line1 {
+                }
+                .line2 {
+                }
+            }
+        }
+    }
+}
+@media (max-width: 767px) {
+    .videosSection {
+        .sectionHeading {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .arrow {
+        }
+        .carouselLeftNav {
+        }
+        .carouselRightNav {
+        }
+        .videos {
+            .videoItem {
+                .videoThumbnail {
+                    & span {
+                    }
+                    img {
+                    }
+                    svg {
+                        height: 30px;
+                        width: 30px;
+                    }
+                    .triangle {
+                    }
+                    .circle {
+                    }
+                    &:hover {
+                        img {
+                        }
+                        .triangle {
+                        }
+                        .circle {
+                        }
+                    }
+                }
+                .videoTitle {
+                }
+            }
+        }
+    
+        .videoSkeleton {
+            .skItem {
+                .thumb {
+                }
+                .line1 {
+                }
+                .line2 {
+                }
+            }
+        }
+    }
+}
+@media (max-width: 575px) {
+    .videosSection {
+        .sectionHeading {
+            font-size: 18px;
+        }
+        .arrow {
+        }
+        .carouselLeftNav {
+        }
+        .carouselRightNav {
+        }
+        .videos {
+            .videoItem {
+                .videoThumbnail {
+                    & span {
+                    }
+                    img {
+                    }
+                    svg {
+                    }
+                    .triangle {
+                    }
+                    .circle {
+                    }
+                    &:hover {
+                        img {
+                        }
+                        .triangle {
+                        }
+                        .circle {
+                        }
+                    }
+                }
+                .videoTitle {
+                }
+            }
+        }
+    
+        .videoSkeleton {
+            .skItem {
+                .thumb {
+                }
+                .line1 {
+                }
+                .line2 {
+                }
             }
         }
     }
