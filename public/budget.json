@@ -1,0 +1,20 @@
+{
+  "bytes": {
+    "total": 1500000,
+    "css": 50000,
+    "font": 50000,
+    "image": 500000,
+    "script": 300000,
+    "thirdParty": 200000,
+    "xhr": 100000
+  },
+  "requests": {
+    "total": 20,
+    "css": 2,
+    "font": 2,
+    "image": 10,
+    "script": 4,
+    "thirdParty": 2,
+    "xhr": 1
+  }
+}

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import dayjs from "dayjs";
 import Img from "../lazyLoadImage/Img";
-import PosterFallback from "../../assets/img/no-poster.png";
+import PosterFallback from "../../assets/img/no-poster.avif";
 import './style.scss'
 import CircleRating from './../circleRating/CircleRating';
 
@@ -53,7 +53,7 @@ const Carousel = ({data, loading, endPoint}) => {
                             <div key={item.id} className="carouselItem col"
                             onClick={()=> navigate(`/${item.media_type || endPoint}/${item.id}`)}>
                                 <div className="posterBlock">
-                                    <Img src={posterUrl} width={'196'} height={'294'} />
+                                    <Img src={posterUrl} width={'196'} height={'294'} alt={'Poster Image'} />
                                     <CircleRating rating={item.vote_average.toFixed(1)}/>
                                     {/* <Genres data={item.genre_ids}/> */}
                                 </div>

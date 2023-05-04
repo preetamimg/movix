@@ -4,7 +4,7 @@ import {BsFillArrowLeftCircleFill,BsFillArrowRightCircleFill,} from "react-icons
 
 import "./style.scss";
 import Img from "../../../components/lazyLoadImage/Img";
-import avatar from "../../../assets/img/avatar.png";
+import avatar from "../../../assets/img/avatar.avif";
 
 const Cast = ({ data, loading }) => {
     const CarouselContainer = useRef();
