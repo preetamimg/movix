@@ -21,8 +21,9 @@ function App() {
     FetchDataFromApi('/configuration').then((res)=>{
       console.log(res)
       const url = {
-        backdrop: res.images.secure_base_url + "original",
-        poster: res.images.secure_base_url + "original",
+        backdrop: res.images.secure_base_url + "w1280",
+        // mobPoster: res.images.secure_base_url + "w185",
+        poster: res.images.secure_base_url + "w342",
         profile: res.images.secure_base_url + "original",
       }
       dispatch(getApiConfiguration(url))
