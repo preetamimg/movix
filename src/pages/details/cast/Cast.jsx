@@ -11,6 +11,8 @@ const Cast = ({ data, loading }) => {
     const { url } = useSelector((state) => state.home);
     let castData = data?.cast;
 
+    console.log(castData)
+
     const skeleton = () => {
         return (
             <div className="skItem">
@@ -32,43 +34,54 @@ const Cast = ({ data, loading }) => {
         })
     }
     return (
-        <div className="container-fluid castSection">
-            <div className="container position-relative">
-            <BsFillArrowLeftCircleFill
-            className="carouselLeftNav arrow"
-            onClick={()=> navigation('left')}/>
-            <BsFillArrowRightCircleFill
-            className="carouselRightNav arrow"
-            onClick={()=> navigation('right')}/>
-                <div className="sectionHeading">Top Cast</div>
-                {!loading ? (
-                    <div className="flex-nowrap mx-0 g-2 g-sm-3 g-lg-4 row listItems" ref={CarouselContainer}>
-                        {castData?.map((item)=> (
-                            <div className="col listItem" key={item.id}>
-                                <div className="row mx-0 row-cols-6">
-                                    <div className="col-12">
-                                        <div className="profileImg mx-auto">
-                                            <Img src={item?.profile_path ? url?.profile + item?.profile_path : avatar } alt={"Cast Image"}/>
+        <>
+            {castData?.length > 1 && (
+                <div className="container-fluid castSection py-2 py-lg-3">
+                <div className="container position-relative px-0">
+                    {castData?.length > 8 && (
+                        <>
+                            <BsFillArrowLeftCircleFill
+                            className="carouselLeftNav arrow d-none d-md-block"
+                            onClick={()=> navigation('left')}/>
+                            <BsFillArrowRightCircleFill
+                            className="carouselRightNav arrow d-none d-md-block"
+                            onClick={()=> navigation('right')}/>
+                        </>
+                    )}
+                    <div className="sectionHeading">Top Cast</div>
+                    {!loading ? (
+                        <div className="flex-nowrap mx-0 g-2 g-sm-3 g-lg-4 row listItems" ref={CarouselContainer}>
+                            {castData?.map((item)=> (
+                                <div className="col-auto listItem" key={item.id}>
+                                    <div className="row">
+                                        <div className="col-12">
+                                            <div className="profileImg mx-auto">
+                                                <Img src={item?.profile_path ? url?.profile + item?.profile_path : avatar } alt={"Cast Image"}/>
+                                            </div>
                                         </div>
+                                        <div className="col-12 name">{item?.name}</div>
+                                        <div className="col-12 character">{item?.character}</div>
                                     </div>
-                                    <div className="col-12 name">{item?.name}</div>
-                                    <div className="col-12 character">{item?.character}</div>
                                 </div>
-                            </div>
-                        ))}
-                    </div>
-                ) : (
-                    <div className="castSkeleton">
-                        {skeleton()}
-                        {skeleton()}
-                        {skeleton()}
-                        {skeleton()}
-                        {skeleton()}
-                        {skeleton()}
-                    </div>
-                )}
+                            ))}
+                        </div>
+                    ) : (
+                        <div className="flex-nowrap mx-0 g-2 g-sm-3 g-lg-4 row castSkeleton">
+                            {skeleton()}
+                            {skeleton()}
+                            {skeleton()}
+                            {skeleton()}
+                            {skeleton()}
+                            {skeleton()}
+                            {skeleton()}
+                            {skeleton()}
+                        </div>
+                    )}
+                </div>
             </div>
-        </div>
+            )}
+        </>
+        
     );
 };
 

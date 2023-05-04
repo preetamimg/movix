@@ -80,7 +80,7 @@ const Header = () => {
             ${showSearch ? 'showSearch' : ''}`}>
                 <div className="container">
                     <div className="row align-items-center">
-                        <div className="col">
+                        <div className="col logoBox">
                             <img src={logo} alt="logo" onClick={()=> navigate('/')} />
                         </div>
                         {
@@ -109,7 +109,7 @@ const Header = () => {
                                     </li>
                                 </ul>
                                 {mobileMenu ? (
-                                    <ul className="m-0 p-0 list-unstyled d-flex flex-column mobileMenu bg-dark">
+                                    <ul className="m-0 p-0 list-unstyled d-flex flex-column mobileMenu">
                                         <li className="navLink text-white ps-4 py-2"
                                         onClick={()=> navigationHandler('movie')}>Movies</li>
                                         <li className="navLink text-white ps-4 py-2 pb-3"
@@ -119,10 +119,10 @@ const Header = () => {
                             </div>
                             )
                         }
-                        <div className="searchBox bg-dark text-white py-2 py-sm-2">
+                        <div className="searchBox text-white py-2 py-sm-2 bg-dark">
                             <div className="container position-relative">
                             <input type="text" 
-                            className="form-control shadow-none border-0 bg-dark text-white" 
+                            className="form-control shadow-none border-0 text-white bg-dark" 
                             placeholder="Search for movie and tv show..."
                             onChange={(e)=>setQuery(e.target.value)}
                             onKeyUp={searchQueryHandler}
