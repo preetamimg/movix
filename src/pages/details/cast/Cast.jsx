@@ -4,7 +4,7 @@ import {BsFillArrowLeftCircleFill,BsFillArrowRightCircleFill,} from "react-icons
 
 import "./style.scss";
 import Img from "../../../components/lazyLoadImage/Img";
-import avatar from "../../../assets/img/avatar.avif";
+import avatar from "../../../assets/img/avatar.png";
 
 const Cast = ({ data, loading }) => {
     const CarouselContainer = useRef();
@@ -56,7 +56,7 @@ const Cast = ({ data, loading }) => {
                                     <div className="row">
                                         <div className="col-12">
                                             <div className="profileImg mx-auto">
-                                                <Img src={item?.profile_path ? url?.profile + item?.profile_path : avatar } width={'125'} height={'125'} alt={"Cast Image"}/>
+                                                <Img src={item?.profile_path ? url?.profile + item?.profile_path : avatar } width={'141'} height={'226'} alt={"Cast Image"}/>
                                             </div>
                                         </div>
                                         <div className="col-12 name">{item?.name}</div>
