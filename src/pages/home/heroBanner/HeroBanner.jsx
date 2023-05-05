@@ -9,13 +9,13 @@ import imdbLogo from './../../../assets/img/imdbLogo.png'
 
 const HeroBanner = () => {
   const [bannerInfo, setBannerInfo] = useState('')
-  const {data, loading} = useFetch('/movie/popular')
+  const {data, loading} = useFetch('/movie/upcoming')
   const {url} = useSelector((state)=> state.home)
   const navigate = useNavigate();
   useEffect(()=> {
     const BannerData = data?.results?.[Math.floor(Math.random() * 20)]
     setBannerInfo(BannerData)
-    console.log(bannerInfo)
+    // console.log(bannerInfo)
 
   }, [data])
   return (
@@ -28,6 +28,7 @@ const HeroBanner = () => {
             src={url?.backdrop + bannerInfo?.backdrop_path}
             srcSet={`${url?.mobileBackdrop + bannerInfo?.backdrop_path} 768w, ${url?.backdrop + bannerInfo?.backdrop_path} 1280w`}
             sizes="(max-width: 768px) 768px, 1280px"
+            alt={'hero banner image'}
           />
         <div className="row heroDetailBox position-absolute w-100 mx-0">
           <div className="col-lg-6 col-md-8 col-10 movieTitle">{bannerInfo?.title}</div>

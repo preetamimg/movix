@@ -7,16 +7,25 @@ import "./style.scss";
 import Img from "../lazyLoadImage/Img";
 import CircleRating from "../circleRating/CircleRating";
 import PosterFallback from "./../../assets/img/no-poster.avif";
+import ProfileFallback from './../../assets/img/avatar.png'
 
 const MovieCard = ({ data, fromSearch, mediaType }) => {
     const { url } = useSelector((state) => state.home);
     const navigate = useNavigate();
-    const posterUrl = data.poster_path
-        ? url.poster + data.poster_path
-        : PosterFallback;
+    // const posterUrl = data.poster_path ? url.poster + data.poster_path : data.profile_path
+    // ? url.profile + data.profile_path : PosterFallback;
+    let posterUrl = ''
+    if(data?.media_type === "person") {
+        posterUrl = data.profile_path ? url.profile + data.profile_path : ProfileFallback;
+    } else {
+        posterUrl = data.poster_path ? url.poster + data.poster_path : PosterFallback;
+    }
+    const NavigatePage = ()=> {
+        navigate(`/${data.media_type || mediaType}/${data.id}`)
+    }
     return (
         <div className="movieCard col"
-        onClick={()=> navigate(`/${data.media_type || mediaType}/${data.id}`)}>
+        onClick={NavigatePage}>
             <div className="posterBlock">
                 <Img src={posterUrl} alt={"movie poster image"}/>
                 {!fromSearch && (
@@ -28,7 +37,7 @@ const MovieCard = ({ data, fromSearch, mediaType }) => {
                 {data.title || data.name}
                 </span>
                 <span className="date">
-                    {dayjs(data.release_date).format("MMM D, YYYY")}
+                    {data?.media_type === "person" ? data?.known_for_department : dayjs(data.release_date).format("MMM D, YYYY") }
                 </span>
             </div>
         </div>
