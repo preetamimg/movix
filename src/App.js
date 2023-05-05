@@ -26,7 +26,7 @@ function App() {
         mobileBackdrop: res.images.secure_base_url + "w780",
         // mobPoster: res.images.secure_base_url + "w185",
         poster: res.images.secure_base_url + "w342",
-        profile: res.images.secure_base_url + "original",
+        profile: res.images.secure_base_url + "w185",
       }
       dispatch(getApiConfiguration(url))
     })

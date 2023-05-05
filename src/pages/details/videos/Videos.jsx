@@ -62,7 +62,7 @@ const Videos = ({ data, loading }) => {
                                     setShow(true)
                                 }}>
                                     <div className="videoThumbnail">
-                                        <Img src={`https://img.youtube.com/vi/${video.key}/hqdefault.jpg`}/>
+                                        <Img  width={'306'} height={'230'} src={`https://img.youtube.com/vi/${video.key}/hqdefault.jpg`} alt={'video thumb'} />
                                         <PlayIcon/>
                                     </div>
                                 </div>

@@ -81,7 +81,7 @@ const Header = () => {
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col logoBox">
-                            <img src={logo} alt="logo" onClick={()=> navigate('/')} />
+                            <img src={logo} alt="logo" width={'131'} height={'40'} onClick={()=> navigate('/')} />
                         </div>
                         {
                             isNarrowScreen ? (

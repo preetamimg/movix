@@ -15,7 +15,7 @@ const HeroBanner = () => {
   useEffect(()=> {
     const BannerData = data?.results?.[Math.floor(Math.random() * 20)]
     setBannerInfo(BannerData)
-    // console.log(bannerInfo)
+    console.log(bannerInfo)
 
   }, [data])
   return (
@@ -35,7 +35,7 @@ const HeroBanner = () => {
             <div className="row mx-0">
               <div className="col-auto imdbRating ps-0">
                 <div className="d-flex align-items-center">
-                  <img src={imdbLogo} alt="imdb logo" className='me-2' />
+                  <img src={imdbLogo} alt="imdb logo" width={'36'} height={'18'} className='me-2' />
                   {bannerInfo?.vote_average}
                 </div>
                 </div>

@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import "./style.scss";
 import Img from "../lazyLoadImage/Img";
 import CircleRating from "../circleRating/CircleRating";
-import PosterFallback from "./../../assets/img/no-poster.png";
+import PosterFallback from "./../../assets/img/no-poster.avif";
 
 const MovieCard = ({ data, fromSearch, mediaType }) => {
     const { url } = useSelector((state) => state.home);
