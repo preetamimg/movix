@@ -23,7 +23,12 @@ const HeroBanner = () => {
     {!loading ? (
     <div className="heroSection container-fluid mb-3">
       <div className="container heroSectionInner heroSectionBefore position-relative px-0">
-        <Img className='heroImg w-100' src={url?.backdrop + bannerInfo?.backdrop_path} alt={'hero section image'}/>
+        {/* <Img className='heroImg w-100' src={url?.backdrop + bannerInfo?.backdrop_path} alt={'hero section image'}/> */}
+        <Img className='heroImg w-100'
+            src={url?.backdrop + bannerInfo?.backdrop_path}
+            srcSet={`${url?.mobileBackdrop + bannerInfo?.backdrop_path} 768w, ${url?.backdrop + bannerInfo?.backdrop_path} 1280w`}
+            sizes="(max-width: 768px) 768px, 1280px"
+          />
         <div className="row heroDetailBox position-absolute w-100 mx-0">
           <div className="col-lg-6 col-md-8 col-10 movieTitle">{bannerInfo?.title}</div>
           <div className="col-12 mt-sm-3 mt-2 mt-lg-4">

@@ -22,6 +22,8 @@ function App() {
       console.log(res)
       const url = {
         backdrop: res.images.secure_base_url + "w1280",
+        mobBackdrop: res.images.secure_base_url + "w300",
+        mobileBackdrop: res.images.secure_base_url + "w780",
         // mobPoster: res.images.secure_base_url + "w185",
         poster: res.images.secure_base_url + "w342",
         profile: res.images.secure_base_url + "original",
