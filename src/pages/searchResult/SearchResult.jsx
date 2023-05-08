@@ -35,8 +35,9 @@ const fetchNextData = ()=> {
       else {
         setData(res)
       }
-      // console.log('fetchnextdata')
+      console.log('fetchnextdata')
         setPageNum((prev) => prev + 1)
+        // console.log(pageNum)
     })
 }
 
