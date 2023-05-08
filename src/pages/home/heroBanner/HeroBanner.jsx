@@ -26,7 +26,7 @@ const HeroBanner = () => {
         {/* <Img className='heroImg w-100' src={url?.backdrop + bannerInfo?.backdrop_path} alt={'hero section image'}/> */}
         <Img className='heroImg w-100'
             src={url?.backdrop_sizes_w1280 + bannerInfo?.backdrop_path}
-            srcSet={`${url?.backdrop_sizes_w300 + bannerInfo?.backdrop_path} 300w, ${url?.backdrop_sizes_w780 + bannerInfo?.backdrop_path} 768w, ${url?.backdrop_sizes_w1280 + bannerInfo?.backdrop_path} 1280w`}
+            srcSet={`${url?.backdrop_sizes_w300 + bannerInfo?.backdrop_path} 400w, ${url?.backdrop_sizes_w780 + bannerInfo?.backdrop_path} 900w, ${url?.backdrop_sizes_w1280 + bannerInfo?.backdrop_path} 1200w`}
             alt={'hero banner image'}
           />
         <div className="row heroDetailBox position-absolute w-100 mx-0">
