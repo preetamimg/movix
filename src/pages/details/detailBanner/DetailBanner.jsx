@@ -31,7 +31,7 @@ const DetailBanner = ({video, crew}) => {
         return `${hours}h${minutes > 0 ? ` ${minutes}m` : ""}`;
     };
     console.log(data)
-    let bgImg = url.backdrop + data?.backdrop_path;
+    let bgImg = url.backdrop_1280 + data?.backdrop_path;
 
     return (
         <>

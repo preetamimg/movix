@@ -58,6 +58,7 @@ const Details = () => {
     })
   }
   // console.log(personSocial)
+  
 
   useEffect(()=> {
     if(mediaType !== 'person') {

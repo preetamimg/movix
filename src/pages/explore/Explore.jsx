@@ -67,6 +67,8 @@ const Explore = () => {
         fetchInitialData();
     }, [mediaType]);
 
+    console.log(genresData)
+
     const onChange = (selectedItems, action) => {
         if (action.name === "sortby") {
             setSortby(selectedItems);
