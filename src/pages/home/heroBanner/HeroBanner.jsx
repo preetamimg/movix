@@ -15,7 +15,7 @@ const HeroBanner = () => {
   useEffect(()=> {
     const BannerData = data?.results?.[Math.floor(Math.random() * 20)]
     setBannerInfo(BannerData)
-    // console.log(bannerInfo)
+    console.log(bannerInfo)
 
   }, [data])
   return (
@@ -27,7 +27,7 @@ const HeroBanner = () => {
         <Img className='heroImg w-100'
             src={url?.backdrop + bannerInfo?.backdrop_path}
             srcSet={`${url?.mobileBackdrop + bannerInfo?.backdrop_path} 768w, ${url?.backdrop + bannerInfo?.backdrop_path} 1280w`}
-            sizes="(max-width: 768px) 768px, 1280px"
+            sizes="(min-width: 1280px) 100vw, 100vw"
             alt={'hero banner image'}
           />
         <div className="row heroDetailBox position-absolute w-100 mx-0">
