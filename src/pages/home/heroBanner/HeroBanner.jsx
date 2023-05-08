@@ -25,8 +25,8 @@ const HeroBanner = () => {
       <div className="container heroSectionInner heroSectionBefore position-relative px-0">
         {/* <Img className='heroImg w-100' src={url?.backdrop + bannerInfo?.backdrop_path} alt={'hero section image'}/> */}
         <Img className='heroImg w-100'
-            src={url?.backdrop_1280 + bannerInfo?.backdrop_path}
-            srcSet={`${url?.backdrop_780 + bannerInfo?.backdrop_path} 768w, ${url?.backdrop_1280 + bannerInfo?.backdrop_path} 1280w`}
+            src={url?.backdrop_sizes_w1280 + bannerInfo?.backdrop_path}
+            srcSet={`${url?.backdrop_sizes_w300 + bannerInfo?.backdrop_path} 300w, ${url?.backdrop_sizes_w780 + bannerInfo?.backdrop_path} 768w, ${url?.backdrop_sizes_w1280 + bannerInfo?.backdrop_path} 1280w`}
             alt={'hero banner image'}
           />
         <div className="row heroDetailBox position-absolute w-100 mx-0">
