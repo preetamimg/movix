@@ -95,15 +95,15 @@ const Explore = () => {
     return (
         <div className="container-fluid explorePage">
             <div className="container">
-                <div className="row">
-                    <div className="col pageTitle">
+                <div className="row mx-0 mb-3 align-items-center">
+                    <div className="col-md pageTitle">
                         {mediaType === "tv"
                             ? "Explore TV Shows"
                             : "Explore Movies"}
                     </div>
-                    <div className="col-auto filters">
+                    <div className="col-md-auto px-0 filters mt-2 mt-md-0">
                       <div className="row mx-0">
-                        <div className="col-auto">
+                        <div className="col-md-auto col-sm-6 mb-2 mb-sm-0">
                           <Select
                               isMulti
                               name="genres"
@@ -118,7 +118,7 @@ const Explore = () => {
                               classNamePrefix="react-select"
                           />
                         </div>
-                        <div className="col-auto">
+                        <div className="col-md-auto col-sm-6">
                           <Select
                               name="sortby"
                               value={sortby}

@@ -1,6 +1,7 @@
 import React , {useRef} from "react";
 import { useSelector } from "react-redux";
 import {BsFillArrowLeftCircleFill,BsFillArrowRightCircleFill,} from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 import "./style.scss";
 import Img from "../../../components/lazyLoadImage/Img";
@@ -8,6 +9,7 @@ import avatar from "../../../assets/img/avatar.png";
 
 const Cast = ({ data, loading }) => {
     const CarouselContainer = useRef();
+    const Navigate = useNavigate()
     const { url } = useSelector((state) => state.home);
     let castData = data?.cast;
 
@@ -53,7 +55,9 @@ const Cast = ({ data, loading }) => {
                         <div className="flex-nowrap mx-0 g-2 g-sm-3 g-lg-4 row listItems" ref={CarouselContainer}>
                             {castData?.map((item)=> (
                                 <div className="col-auto listItem" key={item.id}>
-                                    <div className="row">
+                                    <div className="row"
+                                    onClick={()=> Navigate(`/person/${item.id}`)}
+                                    >
                                         <div className="col-12">
                                             <div className="profileImg mx-auto">
                                                 <Img src={item?.profile_path ? url?.profile + item?.profile_path : avatar } width={'141'} height={'226'} alt={"Cast Image"}/>
