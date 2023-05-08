@@ -21,16 +21,24 @@ function App() {
     FetchDataFromApi('/configuration').then((res)=>{
       console.log(res)
       const url = {
-        backdrop_1280: res.images.secure_base_url + "w1280",
-        backdrop_780: res.images.secure_base_url + "w780",
-        backdrop_300: res.images.secure_base_url + "w300",
-        // mobPoster: res.images.secure_base_url + "w185",
-        poster: res.images.secure_base_url + "w342",
-        detailPoster: res.images.secure_base_url + "w500",
-        profile: res.images.secure_base_url + "w185",
-        profileDetail: res.images.secure_base_url + "h632",
-
+        // backdrop_1280: res.images.secure_base_url + "w1280",
+        // backdrop_780: res.images.secure_base_url + "w780",
+        // backdrop_300: res.images.secure_base_url + "w300",
+        // // mobPoster: res.images.secure_base_url + "w185",
+        // poster: res.images.secure_base_url + "w342",
+        // detailPoster: res.images.secure_base_url + "w500",
+        // profile: res.images.secure_base_url + "w185",
+        // profileDetail: res.images.secure_base_url + "h632",
       }
+      for(let ele in res.images){
+        if(Array.isArray(res.images[ele])){
+            for(let data of res.images[ele]){
+                url[`${ele}_${data}`] = `${res.images.base_url}${data}`
+            }
+        }
+    // console.log(ele)
+    }
+    console.log(url)
       dispatch(getApiConfiguration(url))
     })
   }
