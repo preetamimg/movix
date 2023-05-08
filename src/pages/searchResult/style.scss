@@ -12,3 +12,50 @@
         margin-bottom: 25px;
     }
 }
+@media (max-width: 1399px) {
+    .searchResultsPage {
+        .resultNotFound {
+        }
+        .pageTitle {
+        }
+    }
+}
+@media (max-width: 1199px) {
+    .searchResultsPage {
+        .resultNotFound {
+        }
+        .pageTitle {
+        }
+    }
+}
+@media (max-width: 991px) {
+    .searchResultsPage {
+        .resultNotFound {
+        }
+        .pageTitle {
+            font-size: 22px;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .searchResultsPage {
+        padding-top: 12px;
+        .resultNotFound {
+        }
+        .pageTitle {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+    }
+}
+@media (max-width: 575px) {
+    .searchResultsPage {
+        padding-top: 10px;
+        .resultNotFound {
+        }
+        .pageTitle {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    }
+}

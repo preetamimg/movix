@@ -35,8 +35,9 @@ const fetchNextData = ()=> {
       else {
         setData(res)
       }
-      // console.log('fetchnextdata')
+      console.log('fetchnextdata')
         setPageNum((prev) => prev + 1)
+        // console.log(pageNum)
     })
 }
 
@@ -47,7 +48,7 @@ useEffect(()=> {
   fetchInitialData();
 }, [query])
 
-// console.log(data)
+console.log(data)
 
   return (
     <div className='container-fluid searchResultsPage'>
@@ -68,7 +69,7 @@ useEffect(()=> {
                   hasMore={pageNum <= data?.total_pages}
                   loader={<Spinner />}>
                     {data?.results?.map((item, index)=> {
-                      if(item.media_type === "person") return;
+                      // if(item.media_type === "person") return;
                       return (
                         <MovieCard key={index} data={item} fromSearch={true}/>
                       )

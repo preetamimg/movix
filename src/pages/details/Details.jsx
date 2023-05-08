@@ -9,6 +9,7 @@ import Simillar from './carousels/Simillar'
 import Recommended from './carousels/Reccommend'
 import {FetchDataFromApi} from './../../utils/api'
 import PersonBanner from './personBanner/PersonBanner'
+import RelatedMovie from './carousels/RelatedMovie'
 const Details = () => {
 
   const {mediaType, id} = useParams();
@@ -18,6 +19,9 @@ const Details = () => {
   const [creditLoading,  setCreditLoading] = useState(false)
   const [person,  setPerson] = useState('')
   const [personLoading,  setPersonLoading] = useState(false)
+  const [personSocial, setPersonSocial] = useState('')
+  const [socialLoading, setSocialLoading] = useState(false)
+  console.log(mediaType)
 
   
   // const {data, loading} = useFetch(`/${mediaType}/${id}/videos`)
@@ -46,6 +50,14 @@ const Details = () => {
     setPersonLoading(false)
     })
   }
+  const fetchpersonSocialData = () => {
+    setSocialLoading(true)
+    FetchDataFromApi(`/${mediaType}/${id}/external_ids`).then((res)=> {
+      setPersonSocial(res)
+      setSocialLoading(false)
+    })
+  }
+  // console.log(personSocial)
 
   useEffect(()=> {
     if(mediaType !== 'person') {
@@ -53,8 +65,9 @@ const Details = () => {
       fetchCastData()
     } else {
       fetchpersonData()
+      // fetchpersonSocialData()
     }
-  }, [])
+  }, [id])
 
   console.log(mediaType)
   return (
@@ -62,6 +75,7 @@ const Details = () => {
     {(mediaType === 'person') ? (
       <>
         <PersonBanner data={person} loading={personLoading}/>
+        <RelatedMovie mediaType={mediaType} id={id}/>
       </>
     ) : (
       <>

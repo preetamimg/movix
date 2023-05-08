@@ -1,0 +1,47 @@
+.explorePage {
+    & .pageTitle {
+        font-size: 24px;
+        color: white;
+    }
+    & .react-select__control  {
+        background-color: #141b29 !important;
+        border-color: #353e53;
+        box-shadow: none !important;
+        font-size: 14px !important;
+        &:hover {
+            border-color: #353e53;
+        }
+    }
+    & .react-select__indicator-separator {
+        background-color: #353e53 !important;
+    }
+    & .react-select__multi-value {
+        background-color: #353e53 !important;
+        color: white !important;
+        & .react-select__multi-value__label {
+            color: white !important;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .explorePage {
+        & .pageTitle {
+            font-size: 22px;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .explorePage {
+        & .pageTitle {
+            font-size: 20px;
+        }
+    }
+}
+@media (max-width: 575px) {
+    .explorePage {
+        & .pageTitle {
+            font-size: 18px;
+        }
+    }
+}

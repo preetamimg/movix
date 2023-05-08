@@ -19,7 +19,7 @@ function App() {
   const {url} = useSelector((state) => state.home)
   const fetchApiConfig = ()=> {
     FetchDataFromApi('/configuration').then((res)=>{
-      // console.log(res)
+      console.log(res)
       const url = {
         backdrop: res.images.secure_base_url + "w1280",
         mobBackdrop: res.images.secure_base_url + "w300",
@@ -28,6 +28,8 @@ function App() {
         poster: res.images.secure_base_url + "w342",
         detailPoster: res.images.secure_base_url + "w500",
         profile: res.images.secure_base_url + "w185",
+        profileDetail: res.images.secure_base_url + "h632",
+
       }
       dispatch(getApiConfiguration(url))
     })

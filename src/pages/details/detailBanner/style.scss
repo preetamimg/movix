@@ -192,8 +192,20 @@
     }
 }
 
+@media (max-width: 991.99px) {
+    .detailBanner {
+        background-image: none !important;
+        &::before {
+            display: none;
+        }
+    }
+}
+
 @media (max-width: 576px) {
     .detailBanner {
+        & .posterImgWrapper {
+            max-width: unset !important;
+        }
         & .detailSection {
             & .title {
                 font-size: 22px !important;
