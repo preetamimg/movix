@@ -53,7 +53,13 @@ const Carousel = ({data, loading, endPoint}) => {
                             <div key={item.id} className="carouselItem col"
                             onClick={()=> navigate(`/${item.media_type || endPoint}/${item.id}`)}>
                                 <div className="posterBlock">
-                                    <Img src={item.poster_path ? url.poster_sizes_w185 + item.poster_path : PosterFallback} srcSet={`${url.poster_sizes_w92 + item.poster_path} 380w, ${url.poster_sizes_w154 + item.poster_path} 650w, ${url.poster_sizes_w185 + item.poster_path} 1280w`} width={'196'} height={'294'} alt={"movie poster image"}/>
+                                    <Img 
+                                    src={item.poster_path ? url.poster_sizes_w185 + item.poster_path : PosterFallback} 
+                                    srcSet={`${item.poster_path ? url.poster_sizes_w92 + item.poster_path : PosterFallback} 380w, ${item.poster_path ? url.poster_sizes_w154 + item.poster_path : PosterFallback} 650w, ${item.poster_path ? url.poster_sizes_w185 + item.poster_path : PosterFallback} 1280w`} 
+                                    width={'196'} 
+                                    height={'294'} 
+                                    alt={"movie poster image"} 
+                                    />
                                     <CircleRating rating={item.vote_average.toFixed(1)}/>
                                     {/* <Genres data={item.genre_ids}/> */}
                                 </div>

@@ -4,7 +4,7 @@ import useFetch from './../../../hooks/useFetch'
 import { useSelector } from 'react-redux'
 import dayjs from 'dayjs'
 import './style.scss'
-import Genres from './../../../components/genres/Genres'
+// import Genres from './../../../components/genres/Genres'
 import CircleRating from './../../../components/circleRating/CircleRating'
 import Img from './../../../components/lazyLoadImage/Img'
 import PosterFallback from './../../../assets/img/no-poster.avif'
@@ -31,7 +31,8 @@ const DetailBanner = ({video, crew}) => {
         return `${hours}h${minutes > 0 ? ` ${minutes}m` : ""}`;
     };
     console.log(data)
-    let bgImg = url.backdrop_1280 + data?.backdrop_path;
+    let bgImg = url.backdrop_sizes_w780 + data?.backdrop_path;
+    // let bgImg = url.backdrop_sizes_w1280 + data?.backdrop_path;
 
     return (
         <>
@@ -44,7 +45,9 @@ const DetailBanner = ({video, crew}) => {
                                 <>
                                     <div className="col-lg-5 col-xl-4 detailPosterIg px-0">
                                         <div className="posterImgWrapper">
-                                            <Img className='w-100' width={'400'} height={'600'} alt={'Poster Image'} src={data?.poster_path ? url.detailPoster + data?.poster_path : PosterFallback}/>
+                                            <Img className='w-100' width={'400'} height={'600'} alt={'Poster Image'} 
+                                            src={data?.poster_path ? url.poster_sizes_w92 + data?.poster_path : PosterFallback}
+                                            srcSet={`${url?.poster_sizes_w185 + data?.poster_path} 250w, ${url?.poster_sizes_w342 + data?.poster_path} 400w, ${url?.poster_sizes_w500 + data?.poster_path} 600w`} />
                                         </div>
                                     </div>
                                     <div className="col-lg-7 col-xl-8 text-white px-0 mt-3 mt-md-4 mt-lg-0 detailSection">

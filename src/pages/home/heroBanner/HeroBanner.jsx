@@ -28,6 +28,7 @@ const HeroBanner = () => {
             src={url?.backdrop_sizes_w1280 + bannerInfo?.backdrop_path}
             srcSet={`${url?.backdrop_sizes_w300 + bannerInfo?.backdrop_path} 400w, ${url?.backdrop_sizes_w780 + bannerInfo?.backdrop_path} 900w, ${url?.backdrop_sizes_w1280 + bannerInfo?.backdrop_path} 1200w`}
             alt={'hero banner image'}
+            preload // add the "preload" attribute
           />
         <div className="row heroDetailBox position-absolute w-100 mx-0">
           <div className="col-lg-6 col-md-8 col-10 movieTitle">{bannerInfo?.title}</div>
