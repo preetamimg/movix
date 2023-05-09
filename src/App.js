@@ -12,6 +12,9 @@ import ExploreGeneres from './pages/explore/ExploreGeneres'
 import SearchResult from './pages/searchResult/SearchResult'
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
+import PrivacyPolicy from './pages/privacyPolicy/PrivacyPolicy'
+import TermsOfUse from './pages/termsOfUse/TermsOfUse'
+import AboutUs  from './pages/aboutUs/AboutUs';
 
 function App() {
   // dispatch method action m data send krta h jis s wo store m save ho jyga
@@ -75,6 +78,9 @@ function App() {
         <Route path='/:mediaType/:id' element={<Details/>}/>
         <Route path='/search/:query' element={<SearchResult/>}/>
         <Route path='/:mediaType' element={<Explore/>}/>
+        <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
+        <Route path='/terms-of-use' element={<TermsOfUse/>}/>
+        <Route path='/about-us' element={<AboutUs/>}/>
         {/* <Route path='/:mediaType/:genreName' element={<ExploreGeneres/>}/> */}
         <Route path='*' element={<PageNotFound/>}/>
       </Routes>

@@ -32,6 +32,13 @@ const Explore = () => {
 
     const { data: genresData } = useFetch(`/genre/${mediaType}/list`);
 
+    console.log(genresData)
+    let word = genresData?.genres?.filter((x)=> x.includes(genreName))
+    console.log(word)
+    // console.log(genresData.filter((x)=> x.includes(genreName)))
+  
+    filters.with_genres = genreName;
+
     const fetchInitialData = () => {
         setLoading(true);
         FetchDataFromApi(`/discover/${mediaType}`, filters).then((res) => {
@@ -67,7 +74,6 @@ const Explore = () => {
         fetchInitialData();
     }, [mediaType]);
 
-    console.log(genresData)
 
     const onChange = (selectedItems, action) => {
         if (action.name === "sortby") {
@@ -79,17 +85,17 @@ const Explore = () => {
             }
         }
 
-        if (action.name === "genres") {
-            setGenre(selectedItems);
-            console.log('selectsd', selectedItems)
-            if (action.action !== "clear") {
-                let genreId = selectedItems.map((g) => g.id);
-                genreId = JSON.stringify(genreId).slice(1, -1);
-                filters.with_genres = genreId;
-            } else {
-                delete filters.with_genres;
-            }
-        }
+        // if (action.name === "genres") {
+        //     setGenre(selectedItems);
+        //     console.log('selectsd', selectedItems)
+        //     if (action.action !== "clear") {
+        //         let genreId = selectedItems.map((g) => g.id);
+        //         genreId = JSON.stringify(genreId).slice(1, -1);
+        //         filters.with_genres = genreId;
+        //     } else {
+        //         delete filters.with_genres;
+        //     }
+        // }
 
         setPageNum(1);
         fetchInitialData();
