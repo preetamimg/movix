@@ -1,19 +1,19 @@
 {
-  "short_name": "Movix",
-  "name": "Movix App",
+  "short_name": "MovieWalas",
+  "name": "MovieWalas App",
   "icons": [
     {
-      "src": "movix-logo.png",
+      "src": "android-chrome-72x72.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "movix-logo.png",
+      "src": "android-chrome-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "movix-logo.png",
+      "src": "android-chrome-256x256.png",
       "type": "image/png",
       "sizes": "512x512"
     }

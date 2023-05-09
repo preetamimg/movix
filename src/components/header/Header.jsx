@@ -5,7 +5,7 @@ import { VscChromeClose } from "react-icons/vsc";
 import { useNavigate, useLocation } from "react-router-dom";
 
 import "./style.scss";
-import logo from './../../assets/img/movix-logo.svg';
+import logo from './../../assets/img/moviewalas.svg';
 
 const Header = () => {
     const [isNarrowScreen, setIsNarrowScreen] = useState(false);
@@ -80,8 +80,8 @@ const Header = () => {
             ${showSearch ? 'showSearch' : ''}`}>
                 <div className="container">
                     <div className="row align-items-center">
-                        <div className="col logoBox">
-                            <img src={logo} alt="logo" width={'131'} height={'40'} onClick={()=> navigate('/')} />
+                        <div className="col logoBox py-2">
+                            <img src={logo} alt="logo" width={'180'} height={'21'} onClick={()=> navigate('/')} />
                         </div>
                         {
                             isNarrowScreen ? (
@@ -121,8 +121,8 @@ const Header = () => {
                         }
                         <div className="searchBox text-white py-2 py-sm-2 bg-dark">
                             <div className="container position-relative">
-                            <input type="text" 
-                            className="form-control shadow-none border-0 text-white bg-dark" 
+                            <input type="search" 
+                            className="form-control shadow-none border-0 text-white bg-transparent" 
                             placeholder="Search for movie and tv show..."
                             onChange={(e)=>setQuery(e.target.value)}
                             onKeyUp={searchQueryHandler}

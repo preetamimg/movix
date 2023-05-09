@@ -62,13 +62,13 @@
             & .watchBtn {
                 font-size: 16px;
                 color: white;
-                background-color: #ad241a;
+                background-color: #094291;
                 border-radius: 12px;
                 padding: 8px 16px;
-                border: 2px solid #ad241a;
+                border: 2px solid #094291;
                 &:is(:active, :hover, :focus) {
-                    background-color: darken(#ad241a, 51);
-                    border-color: darken(#ad241a, 51);
+                    background-color: darken(#094291, 10);
+                    border-color: darken(#094291, 10);
                 }
             }
         }

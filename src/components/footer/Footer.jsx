@@ -15,15 +15,15 @@ const Footer = () => {
             <div className="container">
                 <ul className="menuItems p-0">
                     <li className="menuItem">
+                        <Link className="text-white" to='/about-us'>About</Link>
+                    </li>
+                    <li className="menuItem">
                         <Link className="text-white" to='/terms-of-use'>Terms Of Use</Link>
                     </li>
                     <li className="menuItem">
                         <Link className="text-white" to='/privacy-policy'>Privacy Policy</Link>
                     </li>
-                    <li className="menuItem">
-                        <Link className="text-white" to='/about-us'>About</Link>
-                    </li>
-                    <li className="menuItem">Site Map</li>
+                    <li className="menuItem">Sitemap</li>
                 </ul>
                 <div className="infoText">
                 All movie information, ratings, and reviews provided on this website are for informational purposes only. MovieWalas does not host any copyrighted content and is not responsible for the accuracy, compliance, legality, or decency of any third-party content accessible through our website.

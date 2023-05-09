@@ -1,6 +1,7 @@
 .header {
     position: relative;
-    background-image: linear-gradient(to bottom, #141b29, #0c111b 300px);
+    background-image: linear-gradient(to bottom, rgba(#141b29, .5), rgba(#0c111b, .5) 300px);
+    backdrop-filter: blur(15px);
     & .logoBox {
         & img {
             cursor: pointer;
@@ -12,7 +13,7 @@
             font-size: 17px;
         }
         &:hover {
-            color: rgb(254, 108, 108) !important;
+            color: #1aafff !important;
         }
     }
     & .mobileMenu {
@@ -32,6 +33,9 @@
         // background-image: linear-gradient(to bottom, #141b29, #0c111b 300px);
         & .form-control {
             // background-image: linear-gradient(to bottom, #141b29, #0c111b 300px);
+            background-color: transparent !important;
+            box-shadow: none !important;
+            color: white !important;
         }
         & .closeSearch {
             position: absolute;
