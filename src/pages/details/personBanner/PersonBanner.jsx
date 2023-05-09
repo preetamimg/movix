@@ -17,7 +17,7 @@ const PersonBanner = ({data, loading}) => {
                             <div className="row mx-0">
                                 <div className="col-12 mb-3">
                                     <div className="personBanner">
-                                        <Img src={data?.profile_path ? url?.profile + data?.profile_path : avatar}/>
+                                        <Img src={data?.profile_path ? url?.profile_sizes_h632 + data?.profile_path : avatar} alt={'Person Banner'} />
                                     </div>
                                     <PersonSocial mediaType={'person'} id={data?.id}/>
                                 </div>

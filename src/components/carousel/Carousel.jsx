@@ -48,12 +48,18 @@ const Carousel = ({data, loading, endPoint}) => {
             {!loading ? (
                 <div className="carouselItems flex-nowrap mx-0 g-2 g-sm-3 g-lg-4 row row-cols-3 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6" ref={CarouselContainer}>
                     {data?.map((item)=> {
-                        const posterUrl = item.poster_path ? url.poster + item.poster_path : PosterFallback
+                        // const posterUrl = item.poster_path ? url.poster + item.poster_path : PosterFallback
                         return (
                             <div key={item.id} className="carouselItem col"
                             onClick={()=> navigate(`/${item.media_type || endPoint}/${item.id}`)}>
                                 <div className="posterBlock">
-                                    <Img src={posterUrl} width={'196'} height={'294'} alt={"movie poster image"}/>
+                                    <Img 
+                                    src={item.poster_path ? url.poster_sizes_w185 + item.poster_path : PosterFallback} 
+                                    srcSet={`${item.poster_path ? url.poster_sizes_w92 + item.poster_path : PosterFallback} 380w, ${item.poster_path ? url.poster_sizes_w154 + item.poster_path : PosterFallback} 650w, ${item.poster_path ? url.poster_sizes_w185 + item.poster_path : PosterFallback} 1280w`} 
+                                    width={'196'} 
+                                    height={'294'} 
+                                    alt={"movie poster image"} 
+                                    />
                                     <CircleRating rating={item.vote_average.toFixed(1)}/>
                                     {/* <Genres data={item.genre_ids}/> */}
                                 </div>

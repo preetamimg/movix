@@ -60,7 +60,12 @@ const Cast = ({ data, loading }) => {
                                     >
                                         <div className="col-12">
                                             <div className="profileImg mx-auto">
-                                                <Img src={item?.profile_path ? url?.profile + item?.profile_path : avatar } width={'141'} height={'226'} alt={"Cast Image"}/>
+                                                <Img 
+                                                src={item?.profile_path ? url?.profile_sizes_w45 + item?.profile_path : avatar } 
+                                                srcSet={`${item?.profile_path ? url.profile_sizes_w45 + item.profile_path : avatar} 100w, ${item?.profile_path ? url.profile_sizes_w185 + item.profile_path : avatar} 250w`}
+                                                width={'141'} 
+                                                height={'226'} 
+                                                alt={"Cast Image"}/>
                                             </div>
                                         </div>
                                         <div className="col-12 name">{item?.name}</div>

@@ -16,9 +16,9 @@ const MovieCard = ({ data, fromSearch, mediaType }) => {
     // ? url.profile + data.profile_path : PosterFallback;
     let posterUrl = ''
     if(data?.media_type === "person") {
-        posterUrl = data.profile_path ? url.profile + data.profile_path : ProfileFallback;
+        posterUrl = data.profile_path ? url.profile_sizes_w185 + data.profile_path : ProfileFallback;
     } else {
-        posterUrl = data.poster_path ? url.poster + data.poster_path : PosterFallback;
+        posterUrl = data.poster_path ? url.poster_sizes_w185 + data.poster_path : PosterFallback;
     }
     const NavigatePage = ()=> {
         navigate(`/${data.media_type || mediaType}/${data.id}`)
@@ -27,7 +27,12 @@ const MovieCard = ({ data, fromSearch, mediaType }) => {
         <div className="movieCard col"
         onClick={NavigatePage}>
             <div className="posterBlock">
-                <Img src={posterUrl} alt={"movie poster image"}/>
+                <Img 
+                src={posterUrl} 
+                width={'196'} 
+                height={'294'} 
+                alt={"movie poster image"}
+                />
                 {!fromSearch && (
                     <CircleRating rating={data.vote_average.toFixed(1)}/>
                 )}

@@ -17,7 +17,7 @@ function App() {
   // dispatch method action m data send krta h jis s wo store m save ho jyga
   const dispatch = useDispatch()
 
-  const {url} = useSelector((state) => state.home)
+  // const {url} = useSelector((state) => state.home)
   const fetchApiConfig = ()=> {
     FetchDataFromApi('/configuration').then((res)=>{
       // console.log(res)
@@ -37,7 +37,7 @@ function App() {
                 url[`${ele}_${data}`] = `${res.images.base_url}${data}`
             }
         }
-    // console.log(ele)
+    console.log(ele)
     }
     console.log(url)
       dispatch(getApiConfiguration(url))
