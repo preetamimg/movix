@@ -29,6 +29,8 @@ const MovieCard = ({ data, fromSearch, mediaType }) => {
             <div className="posterBlock">
                 <Img 
                 src={posterUrl} 
+                width={'196'} 
+                height={'294'} 
                 alt={"movie poster image"}
                 />
                 {!fromSearch && (
