@@ -78,9 +78,9 @@ function App() {
         <Route path='/:mediaType/:id' element={<Details/>}/>
         <Route path='/search/:query' element={<SearchResult/>}/>
         <Route path='/:mediaType' element={<Explore/>}/>
-        <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
-        <Route path='/terms-of-use' element={<TermsOfUse/>}/>
-        <Route path='/about-us' element={<AboutUs/>}/>
+        <Route path='/privacy-policy' exact element={<PrivacyPolicy/>}/>
+        <Route path='/terms-of-use' exact element={<TermsOfUse/>}/>
+        <Route path='/about-us' exact element={<AboutUs/>}/>
         {/* <Route path='/:mediaType/:genreName' element={<ExploreGeneres/>}/> */}
         <Route path='*' element={<PageNotFound/>}/>
       </Routes>
