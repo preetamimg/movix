@@ -72,10 +72,10 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/:mediaType/:id' element={<Details/>}/>
+        {/* <Route path='/:mediaType/:id' element={<Details/>}/> */}
         <Route path='/search/:query' element={<SearchResult/>}/>
         <Route path='/:mediaType' element={<Explore/>}/>
-        {/* <Route path='/:mediaType/:genreName' element={<ExploreGeneres/>}/> */}
+        <Route path='/:mediaType/:genreName' element={<ExploreGeneres/>}/>
         <Route path='*' element={<PageNotFound/>}/>
       </Routes>
       <Footer/>
