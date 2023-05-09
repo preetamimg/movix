@@ -3,7 +3,7 @@ import './style.scss'
 
 const TermsOfUse = () => {
   return (
-    <div>TermsOfUse</div>
+    <div className='text-white'>TermsOfUse</div>
   )
 }
 
