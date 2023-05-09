@@ -28,7 +28,7 @@ const Explore = () => {
     const [loading, setLoading] = useState(false);
     const [genre, setGenre] = useState(null);
     const [sortby, setSortby] = useState(null);
-    const { mediaType } = useParams();
+    const { mediaType, genreName } = useParams();
 
     const { data: genresData } = useFetch(`/genre/${mediaType}/list`);
 
@@ -42,7 +42,7 @@ const Explore = () => {
     };
 
     const fetchNextPageData = () => {
-      FetchDataFromApi(
+    FetchDataFromApi(
             `/discover/${mediaType}?page=${pageNum}`,
             filters
         ).then((res) => {
@@ -100,27 +100,10 @@ const Explore = () => {
             <div className="container">
                 <div className="row mx-0 mb-3 align-items-center">
                     <div className="col-md pageTitle">
-                        {mediaType === "tv"
-                            ? "Explore TV Shows"
-                            : "Explore Movies"}
+                        Explore {genreName}
                     </div>
                     <div className="col-md-auto px-0 filters mt-2 mt-md-0">
                       <div className="row mx-0">
-                        <div className="col-md-auto col-sm-6 mb-2 mb-sm-0">
-                          <Select
-                              isMulti
-                              name="genres"
-                              value={genre}
-                              closeMenuOnSelect={false}
-                              options={genresData?.genres}
-                              getOptionLabel={(option) => option.name}
-                              getOptionValue={(option) => option.id}
-                              onChange={onChange}
-                              placeholder="Select genres"
-                              className="react-select-container genresDD"
-                              classNamePrefix="react-select"
-                          />
-                        </div>
                         <div className="col-md-auto col-sm-6">
                           <Select
                               name="sortby"

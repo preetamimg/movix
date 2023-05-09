@@ -15,10 +15,11 @@ const SearchResult = () => {
   // console.log(pageNum)
 
 const fetchInitialData = ()=> {
+  console.log(pageNum)
   setLoading(true)
   FetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}`).then((res)=> {
     setData(res)
-    // console.log('fetchinitialdata')
+    console.log('fetchinitialdata')
     setPageNum((prev) => prev + 1)
     setLoading(false)
   })
@@ -37,13 +38,13 @@ const fetchNextData = ()=> {
       }
       console.log('fetchnextdata')
         setPageNum((prev) => prev + 1)
-        // console.log(pageNum)
+        console.log(pageNum)
     })
 }
 
 
 useEffect(()=> {
-  // console.log('useeffect')
+  console.log('useeffect')
   setPageNum(1);
   fetchInitialData();
 }, [query])

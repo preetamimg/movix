@@ -8,6 +8,7 @@ import Home from './pages/home/Home';
 import PageNotFound from './pages/404/PageNotFound';
 import Details from './pages/details/Details'
 import Explore from './pages/explore/Explore'
+import ExploreGeneres from './pages/explore/ExploreGeneres'
 import SearchResult from './pages/searchResult/SearchResult'
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
@@ -19,7 +20,7 @@ function App() {
   const {url} = useSelector((state) => state.home)
   const fetchApiConfig = ()=> {
     FetchDataFromApi('/configuration').then((res)=>{
-      console.log(res)
+      // console.log(res)
       const url = {
         // backdrop_1280: res.images.secure_base_url + "w1280",
         // backdrop_780: res.images.secure_base_url + "w780",
@@ -71,9 +72,10 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/:mediaType/:id' element={<Details/>}/>
+        {/* <Route path='/:mediaType/:id' element={<Details/>}/> */}
         <Route path='/search/:query' element={<SearchResult/>}/>
-        <Route path='/explore/:mediaType' element={<Explore/>}/>
+        <Route path='/:mediaType' element={<Explore/>}/>
+        <Route path='/:mediaType/:genreName' element={<ExploreGeneres/>}/>
         <Route path='*' element={<PageNotFound/>}/>
       </Routes>
       <Footer/>

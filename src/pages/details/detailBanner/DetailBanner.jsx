@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import useFetch from './../../../hooks/useFetch'
 import { useSelector } from 'react-redux'
 import dayjs from 'dayjs'
@@ -14,6 +14,7 @@ import VideoPopup from '../../../components/videoPopup/VideoPopup'
 
 const DetailBanner = ({video, crew}) => {
     const {mediaType, id} = useParams();
+    const Navigate = useNavigate();
     const {data, loading} = useFetch(`/${mediaType}/${id}`)
     const {url} = useSelector((state) => state.home)
 
@@ -58,7 +59,8 @@ const DetailBanner = ({video, crew}) => {
                                             <div className="col-12 genres">
                                                 <div className="row mx-0 g-2 g-lg-3 genresInner">
                                                     {data?.genres.map((genre)=> (
-                                                        <div className="col-auto ps-0 genre" key={genre.id}>
+                                                        <div className="col-auto ps-0 genre" key={genre.id}
+                                                        onClick={()=> Navigate(`/${mediaType}/${genre.name}`)}>
                                                             <div className="genreText">{genre.name}</div>
                                                         </div>
                                                     ))}

@@ -67,9 +67,9 @@ const Header = () => {
     // menu handler
     const navigationHandler = (type)=> {
         if(type === "movie") {
-            navigate('/explore/movie')
+            navigate('/movie')
         }else {
-            navigate('/explore/tv')
+            navigate('/tv')
         }
         setShowSearch(false)
     }
