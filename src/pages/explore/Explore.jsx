@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams  } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Select from "react-select";
 
@@ -23,13 +23,15 @@ const sortbyData = [
 ];
 
 const Explore = () => {
+    
     const [data, setData] = useState(null);
     const [pageNum, setPageNum] = useState(1);
     const [loading, setLoading] = useState(false);
     const [genre, setGenre] = useState(null);
     const [sortby, setSortby] = useState(null);
     const { mediaType } = useParams();
-
+    const [searchParams] = useSearchParams();
+  console.log('::::::::::::::::::',searchParams.get('type')); 
     const { data: genresData } = useFetch(`/genre/${mediaType}/list`);
 
     const fetchInitialData = () => {
