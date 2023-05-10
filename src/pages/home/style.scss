@@ -1,7 +1,8 @@
+@import '../../variables';
 .sectionHeading {
     font-size: 24px;
     font-weight: 600;
-    color: white;
+    color: $white;
 }
 @media(max-width: 1399px) {
     .sectionHeading {

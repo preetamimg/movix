@@ -1,15 +1,6 @@
+@import '../../../variables';
 .heroSection {
     position: relative;
-    // &::before {
-    //     position: absolute;
-    //     content: '';
-    //     width: 100%;
-    //     height: 50px;
-    //     left: 0;
-    //     bottom: 0;
-    //     z-index: 2;
-    //     background: linear-gradient(180deg , rgba(4,21,45,0) 0%, #04152d 79.17%);
-    // }
     & .lazy-load-image-background {
         display: block !important;
         & .heroImg {
@@ -31,7 +22,7 @@
                 top: 0;
                 left: 0;
                 z-index: 1;
-                background-color: rgba(0,0,0,0.4);
+                background-color: rgba($black, 0.4);
             }
         }
         & .heroDetailBox {
@@ -42,13 +33,13 @@
             & .movieTitle {
                 font-size: 60px;
                 font-weight: 700;
-                color: white;
+                color: $white;
                 line-height: 70px;
             }
             & .imdbRating {
                 font-size: 16px;
-                color: white;
-                border-right: 2px solid white;
+                color: $white;
+                border-right: 2px solid $white;
                 & img {
                     height: 18px;
                     width: 100%;
@@ -56,19 +47,19 @@
             }
             & .releaseDate {
                 font-size: 16px;
-                color: white;
-                // border-right: 2px solid white;
+                color: $white;
+                // border-right: 2px solid $white;
             }
             & .watchBtn {
                 font-size: 16px;
-                color: white;
-                background-color: #094291;
+                color: $white;
+                background-color: $theme1;
                 border-radius: 12px;
                 padding: 8px 16px;
-                border: 2px solid #094291;
+                border: 2px solid $theme1;
                 &:is(:active, :hover, :focus) {
-                    background-color: darken(#094291, 10);
-                    border-color: darken(#094291, 10);
+                    background-color: darken($theme1, 10);
+                    border-color: darken($theme1, 10);
                 }
             }
         }

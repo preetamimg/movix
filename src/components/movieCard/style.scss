@@ -1,3 +1,4 @@
+@import '../../variables';
 .movieCard {
     cursor: pointer;
     .posterBlock {
@@ -31,7 +32,7 @@
             height: 40px;
             position: relative;
             top: 30px;
-            background-color: white;
+            background-color: $white;
             flex-shrink: 0;
         }
         .genres {
@@ -48,11 +49,11 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
-            color: white;
+            color: $white;
         }
         .date {
             font-size: 13px;
-            color: white;
+            color: $white;
             opacity: 0.5;
         }
     }

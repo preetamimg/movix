@@ -1,6 +1,7 @@
+@import '../../variables';
 .header {
     position: relative;
-    background-image: linear-gradient(to bottom, rgba(#141b29, .5), rgba(#0c111b, .5) 300px);
+    background-image: linear-gradient(to bottom, rgba($theme3, .5), rgba(lighten($theme3, 5), .5) 300px);
     backdrop-filter: blur(15px);
     & .logoBox {
         & img {
@@ -13,7 +14,7 @@
             font-size: 17px;
         }
         &:hover {
-            color: #1aafff !important;
+            color: $theme2 !important;
         }
     }
     & .mobileMenu {
@@ -22,7 +23,7 @@
         left: 0;
         width: 100%;
         transform: translateY(-200%);
-        background-image: linear-gradient(to bottom, #141b29, #0c111b 300px);
+        background-image: linear-gradient(to bottom, $theme3, lighten($theme3, 5) 300px);
     }
     & .searchBox {
         position: absolute;
@@ -30,12 +31,10 @@
         left: 0;
         width: 100%;
         transform: translateY(-300%);
-        // background-image: linear-gradient(to bottom, #141b29, #0c111b 300px);
         & .form-control {
-            // background-image: linear-gradient(to bottom, #141b29, #0c111b 300px);
             background-color: transparent !important;
             box-shadow: none !important;
-            color: white !important;
+            color: $white !important;
         }
         & .closeSearch {
             position: absolute;
@@ -46,14 +45,12 @@
         }
     }
     &.showMenu {
-        // background-color: #04152d;
         & .mobileMenu {
             transform: translateY(0);
             z-index: 99;
         }
     }
     &.showSearch {
-        // background-color: #04152d;
         & .searchBox {
             transform: translateY(0);
             z-index: 99;

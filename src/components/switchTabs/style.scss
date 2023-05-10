@@ -1,16 +1,7 @@
-:root {
-    --black: #04152d;
-    --black2: #041226;
-    --black3: #020c1b;
-    --black-lighter: #1c4b91;
-    --black-light: #173d77;
-    --pink: #1aafff;
-    --orange: #094291;
-    --gradient: linear-gradient(-98.37deg, #094291 0.99%, #1aafff 100%);
-}
+@import '../../variables';
 .switchingTabs {
     height: 34px;
-    background-color: rgb(81, 81, 81);
+    background-color: $theme3;
     border-radius: 20px;
     padding: 2px 4px;
     .tabItems {
@@ -24,21 +15,21 @@
             align-items: center;
             justify-content: center;
             width: 100px;
-            color: white;
+            color: $white;
             font-size: 14px;
             position: relative;
             z-index: 1;
             cursor: pointer;
             transition: color ease 0.3s;
             &.active {
-                color: white;
+                color: $white;
             }
         }
         .movingBg {
             height: 30px;
             width: 100px;
             border-radius: 15px;
-            background-image: var(--gradient);
+            background-image: linear-gradient(-98.37deg, $theme1 0.99%, $theme2 100%);
             position: absolute;
             left: 0;
             transition: left cubic-bezier(0.88, -0.35, 0.565, 1.35) 0.4s;

@@ -1,55 +1,15 @@
-
-$enable-caret:                false !default;
-$enable-rounded:              false !default;
-$enable-shadows:              false !default;
-$enable-gradients:            false !default;
-$enable-transitions:          false !default;
-$enable-reduced-motion:       false !default;
-$enable-smooth-scroll:        false !default;
-$enable-grid-classes:         true !default;
-$enable-container-classes:    true !default;
-$enable-cssgrid:              false !default;
-$enable-button-pointers:      false !default;
-$enable-rfs:                  false !default;
-$enable-validation-icons:     false !default;
-$enable-negative-margins:     false !default;
-$enable-deprecation-messages: false !default;
-$enable-important-utilities:  false !default;
-
-
-
-
-$link-decoration:                         none !default;
-$font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-
+@import 'variables';
 @import 'bootstrap/scss/bootstrap.scss';
 
 
 
+
 :root {
-  // font-size: 16px;
-  // line-height: 1;
-  // font-weight: 500;
-
-  // font-synthesis: none;
-  // text-rendering: optimizeLegibility;
-  // -webkit-font-smoothing: antialiased;
-  // -moz-osx-font-smoothing: grayscale;
-  // -webkit-text-size-adjust: 100%;
-
-  // --black: #04152d;
-  // --black2: #041226;
-  // --black3: #020c1b;
-  // --black-lighter: #1c4b91;
-  // --black-light: #173d77;
-  // --pink: #da2f68;
-  // --orange: #f89e00;
-  --gradient: linear-gradient(98.37deg, #094291 0.99%, #1aafff 100%);
+  --gradient: linear-gradient(98.37deg, #{$theme1} 0.99%, #{$theme2} 100%);
 }
 
 body {
-  // background-color: rgb(33,37,41) !important;  
-  background-image: linear-gradient(to bottom, #141b29, #0c111b 300px);
+  background-image: linear-gradient(to bottom, $theme3, darken($theme3, 5) 300px);
 }
 
 ::-webkit-scrollbar {
@@ -59,8 +19,7 @@ body {
 .skeleton {
   position: relative;
   overflow: hidden;
-  // background-color: #e2e5e7;
-  background-color: #313236;
+  background-color: $dark;
   &::after {
       position: absolute;
       top: 0;
@@ -68,19 +27,12 @@ body {
       bottom: 0;
       left: 0;
       transform: translateX(-100%);
-      // background-image: linear-gradient(
-      //     90deg,
-      //     rgba(#ffffff, 0) 0,
-      //     rgba(#ffffff, 0.2) 20%,
-      //     rgba(#ffffff, 0.5) 60%,
-      //     rgba(#ffffff, 0)
-      // );
       background-image: linear-gradient(
           90deg,
-          rgba(#404143, 0) 0,
-          rgba(#404143, 0.2) 20%,
-          rgba(#404143, 0.5) 60%,
-          rgba(#404143, 0)
+          rgba(lighten($dark, 5), 0) 0,
+          rgba(lighten($dark, 5), 0.2) 20%,
+          rgba(lighten($dark, 5), 0.5) 60%,
+          rgba(lighten($dark, 5), 0)
       );
       animation: shimmer 1s infinite;
       content: "";

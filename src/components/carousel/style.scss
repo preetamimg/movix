@@ -1,14 +1,14 @@
-// @import "../../mixins.scss";
+@import '../../variables';
 .carousel {
     .carouselTitle {
         font-size: 24px;
-        color: white;
+        color: $white;
         margin-bottom: 20px;
         font-weight: normal;
     }
     .arrow {
         font-size: 35px;
-        color: black;
+        color: $black;
         position: absolute;
         top: 44%;
         transform: translateY(-50%);
@@ -84,7 +84,7 @@
                     height: 40px;
                     position: relative;
                     top: 30px;
-                    background-color: white;
+                    background-color: $white;
                     flex-shrink: 0;
                 }
                 .genres {
@@ -101,11 +101,11 @@
                     -webkit-box-orient: vertical;
                     overflow: hidden;
                     text-overflow: ellipsis;
-                    color: white;
+                    color: $white;
                 }
                 .date {
                     font-size: 13px;
-                    color: white;
+                    color: $white;
                     opacity: 0.5;
                 }
             }
