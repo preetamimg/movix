@@ -76,7 +76,7 @@ const Header = () => {
 
     return (
         <header className="sticky-top">
-            <div className={`container-fluid py-3 header ${mobileMenu ? 'showMenu' : ''} 
+            <div className={`container-fluid py-3 header position-relative ${mobileMenu ? 'showMenu' : ''} 
             ${showSearch ? 'showSearch' : ''}`}>
                 <div className="container">
                     <div className="row align-items-center">
@@ -87,11 +87,11 @@ const Header = () => {
                             isNarrowScreen ? (
                                 <div className="col-auto">
                                 <ul className="m-0 p-0 list-unstyled d-flex align-items-center">
-                                    <li className="navLink text-white ps-4" 
+                                    <li className="navLink text-white ps-4 text-uppercase fw-bold" 
                                     onClick={()=> navigationHandler('movie')}>Movies</li>
-                                    <li className="navLink text-white ps-4"
-                                    onClick={()=> navigationHandler('tv')}>Tv Shows</li>
-                                    <li className="navLink navIcon text-white ps-4">
+                                    <li className="navLink text-white ps-4 text-uppercase fw-bold"
+                                    onClick={()=> navigationHandler('tv')}>TV Shows</li>
+                                    <li className="navLink navIcon text-white ps-4 text-uppercase fw-bold">
                                         <HiOutlineSearch onClick={openSearchMenu}/>
                                         </li>
                                 </ul>
@@ -109,25 +109,25 @@ const Header = () => {
                                     </li>
                                 </ul>
                                 {mobileMenu ? (
-                                    <ul className="m-0 p-0 list-unstyled d-flex flex-column mobileMenu">
+                                    <ul className="position-absolute top-100 start-0 w-100 m-0 p-0 list-unstyled d-flex flex-column mobileMenu">
                                         <li className="navLink text-white ps-4 py-2"
                                         onClick={()=> navigationHandler('movie')}>Movies</li>
                                         <li className="navLink text-white ps-4 py-2 pb-3"
-                                        onClick={()=> navigationHandler('tv')}>Tv Shows</li>
+                                        onClick={()=> navigationHandler('tv')}>TV Shows</li>
                                     </ul>
                                 ) : ''}
                             </div>
                             )
                         }
-                        <div className="searchBox text-white py-2 py-sm-2 bg-dark">
+                        <div className="position-absolute top-100 start-0 w-100 searchBox text-white py-2 py-sm-2 bg-dark">
                             <div className="container position-relative">
                             <input type="search" 
-                            className="form-control shadow-none border-0 text-white bg-transparent" 
+                            className="form-control shadow-none border-0" 
                             placeholder="Search for movie and tv show..."
                             onChange={(e)=>setQuery(e.target.value)}
                             onKeyUp={searchQueryHandler}
                             />
-                            <VscChromeClose className="closeSearch" 
+                            <VscChromeClose className="closeSearch position-absolute top-50 end-0" 
                             onClick={()=> {setShowSearch(false)}}/> 
                             </div>
                         </div>

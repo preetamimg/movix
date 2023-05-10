@@ -1,6 +1,5 @@
 @import '../../variables';
 .header {
-    position: relative;
     background-image: linear-gradient(to bottom, rgba($theme3, .5), rgba(lighten($theme3, 5), .5) 300px);
     backdrop-filter: blur(15px);
     & .logoBox {
@@ -9,6 +8,7 @@
         }
     }
     & .navLink {
+        font-size: 13px;
         cursor: pointer;
         &.navIcon {
             font-size: 17px;
@@ -18,18 +18,10 @@
         }
     }
     & .mobileMenu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
         transform: translateY(-200%);
         background-image: linear-gradient(to bottom, $theme3, lighten($theme3, 5) 300px);
     }
     & .searchBox {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
         transform: translateY(-300%);
         & .form-control {
             background-color: transparent !important;
@@ -37,9 +29,6 @@
             color: $white !important;
         }
         & .closeSearch {
-            position: absolute;
-            top: 50%;
-            right: 0;
             transform: translateY(-50%);
             cursor: pointer;
         }

@@ -69,6 +69,8 @@ function App() {
     fetchApiConfig();
     genresCall()
   }, [])
+
+  const websiteName = 'hello'
   return (
     <>
     <Router>
@@ -79,8 +81,8 @@ function App() {
         <Route path='/search/:query' element={<SearchResult/>}/>
         <Route path='/:mediaType' element={<Explore/>}/>
         <Route path='/privacy-policy' exact element={<PrivacyPolicy/>}/>
-        <Route path='/terms-of-use' exact element={<TermsOfUse/>}/>
-        <Route path='/about-us' exact element={<AboutUs/>}/>
+        <Route path='/terms-and-conditions' exact element={<TermsOfUse/>}/>
+        <Route path='/about-us' exact element={<AboutUs websiteName={websiteName}/>}/>
         {/* <Route path='/:mediaType/:genreName' element={<ExploreGeneres/>}/> */}
         <Route path='*' element={<PageNotFound/>}/>
       </Routes>

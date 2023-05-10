@@ -40,10 +40,10 @@ const Carousel = ({data, loading, endPoint}) => {
     return <div className="carousel position-relative mt-3 mt-md-3">
         <div className="carouselInner">
             <BsFillArrowLeftCircleFill
-            className="carouselLeftNav arrow d-none d-md-block"
+            className="carouselLeftNav arrow d-none d-md-block bg-white rounded-pill"
             onClick={()=> navigation('left')}/>
             <BsFillArrowRightCircleFill
-            className="carouselRightNav arrow d-none d-md-block"
+            className="carouselRightNav arrow d-none d-md-block bg-white rounded-pill"
             onClick={()=> navigation('right')}/>
             {!loading ? (
                 <div className="carouselItems flex-nowrap mx-0 g-2 g-sm-3 g-lg-4 row row-cols-3 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6" ref={CarouselContainer}>

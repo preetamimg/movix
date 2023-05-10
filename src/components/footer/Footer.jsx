@@ -23,7 +23,9 @@ const Footer = () => {
                     <li className="menuItem">
                         <Link className="text-white" to='/privacy-policy'>Privacy Policy</Link>
                     </li>
-                    <li className="menuItem">Sitemap</li>
+                    <li className="menuItem">
+                        <a href="/sitemap.xml" className="text-white">Sitemap</a>
+                    </li>
                 </ul>
                 <div className="infoText">
                 All movie information, ratings, and reviews provided on this website are for informational purposes only. MovieWalas does not host any copyrighted content and is not responsible for the accuracy, compliance, legality, or decency of any third-party content accessible through our website.

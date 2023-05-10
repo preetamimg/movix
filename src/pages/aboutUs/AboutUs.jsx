@@ -1,8 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
-const AboutUs = () => {
+
+const AboutUs = ({websiteName}) => {
   return (
     <>
+    <Helmet>
+      <title>About Us - {websiteName}</title>
+      <meta name="description" content="This is a description of my page" />
+      <meta name="keywords" content="some, keywords, for, my, page" />
+      <meta name="author" content="My Name" />
+    </Helmet>
     <div className="container pt-4">
       <div className="row">
         <div className="col-12">
