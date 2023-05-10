@@ -6,7 +6,7 @@ import Select from "react-select";
 import "./style.scss";
 
 import useFetch from "../../hooks/useFetch";
-import {FetchDataFromApi} from './../../utils/api'
+import {FetchDataFromApi} from '../../utils/api'
 import MovieCard from "../../components/movieCard/MovieCard";
 import Spinner from "../../components/spinner/Spinner";
 
@@ -30,13 +30,13 @@ const Explore = () => {
     const [genre, setGenre] = useState(null);
     const [sortby, setSortby] = useState(null);
     const { mediaType } = useParams();
-    const [searchParams] = useSearchParams();
-  console.log('::::::::::::::::::',searchParams.get('type')); 
-    const { data: genresData } = useFetch(`/genre/${mediaType}/list`);
+    let [searchParams] = useSearchParams();
+    console.log('::::::::::::::::::',searchParams.get('type')); 
+    const { data: genresData } = useFetch(`/genre/movie/list`);
 
     const fetchInitialData = () => {
         setLoading(true);
-        FetchDataFromApi(`/discover/${mediaType}`, filters).then((res) => {
+        FetchDataFromApi(`/discover/movie`, filters).then((res) => {
             setData(res);
             setPageNum((prev) => prev + 1);
             setLoading(false);
@@ -44,8 +44,8 @@ const Explore = () => {
     };
 
     const fetchNextPageData = () => {
-      FetchDataFromApi(
-            `/discover/${mediaType}?page=${pageNum}`,
+    FetchDataFromApi(
+            `/discover/movie?page=${pageNum}`,
             filters
         ).then((res) => {
             if (data?.results) {
@@ -101,11 +101,7 @@ const Explore = () => {
         <div className="container-fluid explorePage">
             <div className="container">
                 <div className="row mx-0 mb-3 align-items-center">
-                    <div className="col-md pageTitle">
-                        {mediaType === "tv"
-                            ? "Explore TV Shows"
-                            : "Explore Movies"}
-                    </div>
+                    <div className="col-md pageTitle">Explore Movies</div>
                     <div className="col-md-auto px-0 filters mt-2 mt-md-0">
                       <div className="row mx-0">
                         <div className="col-md-auto col-sm-6 mb-2 mb-sm-0">
@@ -155,7 +151,7 @@ const Explore = () => {
                                         <MovieCard
                                             key={index}
                                             data={item}
-                                            mediaType={mediaType}
+                                            mediaType={'movie'}
                                         />
                                     );
                                 })}

@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.scss';
 import {FetchDataFromApi} from './utils/api';
 import { useSelector, useDispatch } from 'react-redux';
@@ -7,7 +7,8 @@ import {getApiConfiguration, getGenres} from './store/homeSlice';
 import Home from './pages/home/Home';
 import PageNotFound from './pages/404/PageNotFound';
 import Details from './pages/details/Details'
-import Explore from './pages/explore/Explore'
+import ExploreMovie from './pages/explore/ExploreMovie'
+import ExploreTv from './pages/explore/ExploreTv'
 import ExploreGeneres from './pages/explore/ExploreGeneres'
 import SearchResult from './pages/searchResult/SearchResult'
 import Header from './components/header/Header'
@@ -65,6 +66,8 @@ function App() {
     // console.log(allGeneres)
   }
 
+
+
   useEffect(()=> {
     fetchApiConfig();
     genresCall()
@@ -79,12 +82,14 @@ function App() {
         <Route path='/' element={<Home websiteName={websiteName}/>}/>
         <Route path='/:mediaType/:id' element={<Details websiteName={websiteName}/>}/>
         <Route path='/search/:query' element={<SearchResult websiteName={websiteName}/>}/>
-        <Route path='/:mediaType' element={<Explore websiteName={websiteName}/>}/>
+        <Route path='/person' element={<Navigate to="/"  websiteName={websiteName}/>}/>
+        <Route path='/movie' exact element={<ExploreMovie websiteName={websiteName}/>}/>
+        <Route path='/tv' exact element={<ExploreTv websiteName={websiteName}/>}/>
         <Route path='/privacy-policy' exact element={<PrivacyPolicy websiteName={websiteName}/>}/>
-        <Route path='/terms-and-conditions' exact element={<TermsOfUse websiteName={websiteName}/>}/>
-        <Route path='/about-us' exact element={<AboutUs websiteName={websiteName}/>}/>
-        {/* <Route path='/:mediaType/:genreName' element={<ExploreGeneres/>}/> */}
-        <Route path='*' element={<PageNotFound/>}/>
+        <Route path='/terms-of-use' exact element={<TermsOfUse websiteName={websiteName}/>}/>
+        <Route path='/about-us' exact element={<AboutUs a={a} websiteName={websiteName}/>}/>
+        <Route path='/geners/:genreName' element={<ExploreGeneres websiteName={websiteName}/>}/>
+        <Route path='*' element={<PageNotFound websiteName={websiteName}/>}/>
       </Routes>
       <Footer/>
     </Router>

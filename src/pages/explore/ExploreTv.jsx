@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams  } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Select from "react-select";
 
@@ -23,23 +23,20 @@ const sortbyData = [
 ];
 
 const Explore = () => {
+    
     const [data, setData] = useState(null);
     const [pageNum, setPageNum] = useState(1);
     const [loading, setLoading] = useState(false);
     const [genre, setGenre] = useState(null);
     const [sortby, setSortby] = useState(null);
-    const { mediaType, genreName } = useParams();
-
-    const { data: genresData } = useFetch(`/genre/list`);
-
-    console.log(genresData?.genres)
-    console.log(genreName)
-    let filterGener = genresData?.genres?.filter((x)=> x.name === genreName)
-    let generId = filterGener.id;
+    const { mediaType } = useParams();
+    let [searchParams] = useSearchParams();
+    console.log('::::::::::::::::::',searchParams.get('type')); 
+    const { data: genresData } = useFetch(`/genre/tv/list`);
 
     const fetchInitialData = () => {
         setLoading(true);
-        FetchDataFromApi(`/discover/${mediaType}`, filters).then((res) => {
+        FetchDataFromApi(`/discover/tv`, filters).then((res) => {
             setData(res);
             setPageNum((prev) => prev + 1);
             setLoading(false);
@@ -47,8 +44,8 @@ const Explore = () => {
     };
 
     const fetchNextPageData = () => {
-    FetchDataFromApi(
-            `/discover/${mediaType}?page=${pageNum}`,
+      FetchDataFromApi(
+            `/discover/tv?page=${pageNum}`,
             filters
         ).then((res) => {
             if (data?.results) {
@@ -72,6 +69,7 @@ const Explore = () => {
         fetchInitialData();
     }, [mediaType]);
 
+    console.log(genresData)
 
     const onChange = (selectedItems, action) => {
         if (action.name === "sortby") {
@@ -83,17 +81,17 @@ const Explore = () => {
             }
         }
 
-        // if (action.name === "genres") {
-        //     setGenre(selectedItems);
-        //     console.log('selectsd', selectedItems)
-        //     if (action.action !== "clear") {
-        //         let genreId = selectedItems.map((g) => g.id);
-        //         genreId = JSON.stringify(genreId).slice(1, -1);
-        //         filters.with_genres = genreId;
-        //     } else {
-        //         delete filters.with_genres;
-        //     }
-        // }
+        if (action.name === "genres") {
+            setGenre(selectedItems);
+            console.log('selectsd', selectedItems)
+            if (action.action !== "clear") {
+                let genreId = selectedItems.map((g) => g.id);
+                genreId = JSON.stringify(genreId).slice(1, -1);
+                filters.with_genres = genreId;
+            } else {
+                delete filters.with_genres;
+            }
+        }
 
         setPageNum(1);
         fetchInitialData();
@@ -103,11 +101,24 @@ const Explore = () => {
         <div className="container-fluid explorePage">
             <div className="container">
                 <div className="row mx-0 mb-3 align-items-center">
-                    <div className="col-md pageTitle">
-                        Explore {genreName}
-                    </div>
+                    <div className="col-md pageTitle">Explore TV Shows</div>
                     <div className="col-md-auto px-0 filters mt-2 mt-md-0">
                       <div className="row mx-0">
+                        <div className="col-md-auto col-sm-6 mb-2 mb-sm-0">
+                          <Select
+                              isMulti
+                              name="genres"
+                              value={genre}
+                              closeMenuOnSelect={false}
+                              options={genresData?.genres}
+                              getOptionLabel={(option) => option.name}
+                              getOptionValue={(option) => option.id}
+                              onChange={onChange}
+                              placeholder="Select genres"
+                              className="react-select-container genresDD"
+                              classNamePrefix="react-select"
+                          />
+                        </div>
                         <div className="col-md-auto col-sm-6">
                           <Select
                               name="sortby"
@@ -140,7 +151,7 @@ const Explore = () => {
                                         <MovieCard
                                             key={index}
                                             data={item}
-                                            mediaType={mediaType}
+                                            mediaType={'tv'}
                                         />
                                     );
                                 })}
