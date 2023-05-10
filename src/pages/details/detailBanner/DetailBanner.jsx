@@ -63,7 +63,7 @@ const DetailBanner = ({video, crew}) => {
                                                 <div className="row mx-0 g-2 g-lg-3 genresInner">
                                                     {data?.genres.map((genre)=> (
                                                         <div className="col-auto ps-0 genre" key={genre.id}
-                                                        onClick={()=> Navigate(`/${mediaType}/${genre.name}`)}>
+                                                        onClick={()=> Navigate(`/geners/${genre.name}`)}>
                                                             <div className="genreText">{genre.name}</div>
                                                         </div>
                                                     ))}
