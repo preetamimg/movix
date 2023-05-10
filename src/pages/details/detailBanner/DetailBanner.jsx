@@ -45,7 +45,7 @@ const DetailBanner = ({video, crew}) => {
                             {!loading ? (
                                 <>
                                     <div className="col-lg-5 col-xl-4 detailPosterIg px-0">
-                                        <div className="posterImgWrapper">
+                                        <div className="posterImgWrapper py-4">
                                             <Img className='w-100' width={'400'} height={'600'} alt={'Poster Image'} 
                                             src={data?.poster_path ? url.poster_sizes_w92 + data?.poster_path : PosterFallback}
                                             srcSet={`${url?.poster_sizes_w185 + data?.poster_path} 250w, ${url?.poster_sizes_w342 + data?.poster_path} 400w, ${url?.poster_sizes_w500 + data?.poster_path} 600w`} />
@@ -158,7 +158,7 @@ const DetailBanner = ({video, crew}) => {
                             ) : (
                                 <>
                                     <div className="col-lg-5 col-xl-4 detailPosterIg px-0 loader">
-                                        <div className="posterImgWrapper skeleton">
+                                        <div className="posterImgWrapper py-4 skeleton">
                                         </div>
                                     </div>
                                     <div className="col-lg-7 col-lg-8 text-white px-0 mt-3 mt-md-0 detailSection loader">
