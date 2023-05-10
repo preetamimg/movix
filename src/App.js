@@ -74,10 +74,10 @@ function App() {
     <Router>
       <Header/>
       <Routes>
-        <Route path='/home' element={<Home/>}/>
+        <Route path='/' element={<Home/>}/>
         <Route path='/:mediaType/:id' element={<Details/>}/>
         <Route path='/search/:query' element={<SearchResult/>}/>
-        <Route path='/home/:mediaType' element={<Explore/>}/>
+        <Route path='/:mediaType' element={<Explore/>}/>
         <Route path='/privacy-policy' exact element={<PrivacyPolicy/>}/>
         <Route path='/terms-of-use' exact element={<TermsOfUse/>}/>
         <Route path='/about-us' exact element={<AboutUs/>}/>
