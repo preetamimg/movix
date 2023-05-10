@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet';
 import './style.scss'
 import { useParams } from 'react-router-dom'
 // import useFetch from './../../hooks/useFetch'
@@ -10,7 +11,7 @@ import Recommended from './carousels/Reccommend'
 import {FetchDataFromApi} from './../../utils/api'
 import PersonBanner from './personBanner/PersonBanner'
 import RelatedMovie from './carousels/RelatedMovie'
-const Details = () => {
+const Details = ({websiteName}) => {
 
   const {mediaType, id} = useParams();
   const [data,  setData] = useState('')
@@ -21,13 +22,13 @@ const Details = () => {
   const [personLoading,  setPersonLoading] = useState(false)
   const [personSocial, setPersonSocial] = useState('')
   const [socialLoading, setSocialLoading] = useState(false)
-  console.log(mediaType)
+  // console.log(mediaType)
 
   
   // const {data, loading} = useFetch(`/${mediaType}/${id}/videos`)
   // const {data: credits, loading: creditLoading} = useFetch(`/${mediaType}/${id}/credits`)
 
-  console.log(person)
+  // console.log(person)
 
   const fetchmovieVideo = ()=> {
     setLoading(true)
@@ -70,23 +71,49 @@ const Details = () => {
     }
   }, [id])
 
-  console.log(mediaType)
+  // console.log(mediaType)
   return (
     <>
     {(mediaType === 'person') ? (
       <>
-        <PersonBanner data={person} loading={personLoading}/>
-        <RelatedMovie mediaType={mediaType} id={id}/>
+      <Helmet>
+        <title>[Actor/Actress Name] - Movies and TV Shows featuring [Actor/Actress] - {`${websiteName}`}</title>
+        <meta name="title" content={`[Actor/Actress Name] - Movies and TV Shows featuring [Actor/Actress] - ${websiteName}`} />
+        <meta name="description" content={`Explore the movies and TV shows featuring [Actor/Actress Name] on ${websiteName}. Learn more about [Actor/Actress] and their work in the film and television industry.`} />
+        <meta name="keywords" content={` [Actor/Actress Name], movies, TV shows, film industry, television industry,${websiteName}`} />
+        <meta name="robots" content="index, follow"></meta>
+      </Helmet>
+      <PersonBanner data={person} loading={personLoading}/>
+      <RelatedMovie mediaType={mediaType} id={id}/>
       </>
     ) : (
       <>
+      {(mediaType === 'movie') ? (
+        
+      <Helmet>
+      <title>Latest Movie Ratings and Reviews - {`${websiteName}`}</title>
+      <meta name="title" content={`Latest Movie Ratings and Reviews - ${websiteName}`} />
+      <meta name="description" content={`Get the latest movie ratings and reviews at ${websiteName}. Find out what other movie-goers think about the latest releases and discover new movies to add to your watchlist.`} />
+      <meta name="keywords" content={`movie ratings, movie reviews, latest movies, watchlist,${websiteName} `} />
+      <meta name="robots" content="index, follow"></meta>
+    </Helmet>
+      ) : (
+        
+      <Helmet>
+      <title>Latest TV Show Ratings and Reviews - {`${websiteName}`}</title>
+      <meta name="title" content={`Latest TV Show Ratings and Reviews - ${websiteName}`} />
+      <meta name="description" content={`Keep up with the latest TV show ratings and reviews at ${websiteName}. Find out what other viewers think about the latest episodes and discover new shows to add to your queue.`} />
+      <meta name="keywords" content={`TV show ratings, TV show reviews, latest episodes, queue, ${websiteName} `} />
+      <meta name="robots" content="index, follow"></meta>
+    </Helmet>
+      )}
       <DetailBanner video={data?.results?.[0]} crew={credits?.crew}/>
       <Cast data={credits} loading={creditLoading}/>
       <Videos data={data} loading={loading}/>
       <Simillar mediaType={mediaType} id={id}/>
       <Recommended mediaType={mediaType} id={id}/>
       </>
-    )}
+    ) }
     </>
   )
 }

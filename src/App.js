@@ -70,18 +70,18 @@ function App() {
     genresCall()
   }, [])
 
-  const websiteName = 'hello'
+  const websiteName = 'MovieWalas'
   return (
     <>
     <Router>
       <Header/>
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/:mediaType/:id' element={<Details/>}/>
-        <Route path='/search/:query' element={<SearchResult/>}/>
-        <Route path='/:mediaType' element={<Explore/>}/>
-        <Route path='/privacy-policy' exact element={<PrivacyPolicy/>}/>
-        <Route path='/terms-and-conditions' exact element={<TermsOfUse/>}/>
+        <Route path='/' element={<Home websiteName={websiteName}/>}/>
+        <Route path='/:mediaType/:id' element={<Details websiteName={websiteName}/>}/>
+        <Route path='/search/:query' element={<SearchResult websiteName={websiteName}/>}/>
+        <Route path='/:mediaType' element={<Explore websiteName={websiteName}/>}/>
+        <Route path='/privacy-policy' exact element={<PrivacyPolicy websiteName={websiteName}/>}/>
+        <Route path='/terms-and-conditions' exact element={<TermsOfUse websiteName={websiteName}/>}/>
         <Route path='/about-us' exact element={<AboutUs websiteName={websiteName}/>}/>
         {/* <Route path='/:mediaType/:genreName' element={<ExploreGeneres/>}/> */}
         <Route path='*' element={<PageNotFound/>}/>

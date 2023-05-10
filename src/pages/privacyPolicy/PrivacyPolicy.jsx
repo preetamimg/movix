@@ -1,8 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
-const PrivacyPolicy = () => {
+const PrivacyPolicy = ({websiteName}) => {
   return (
     <>
+    <Helmet>
+      <title>Privacy Policy - Your Privacy Matters to Us at {`${websiteName}`}</title>
+      <meta name="title" content={`Privacy Policy - Your Privacy Matters to Us at ${websiteName}`} />
+      <meta name="description" content={`At ${websiteName}, we are committed to protecting your personal information. Learn how we collect, use, and disclose your information in our privacy policy.`} />
+      <meta name="keywords" content="privacy policy, personal information, data collection, data protection, online privacy, website security" />
+      <meta name="robots" content="index, follow"></meta>
+    </Helmet>
     <div className="container pt-4">
       <div className="row">
         <div className="col-12">
@@ -11,7 +19,7 @@ const PrivacyPolicy = () => {
           </div>
           <div className="row small">
             <div className="col-12 small text-white pb-3">
-            Welcome to MovieWalas, your go-to source for the latest movie news, ratings, and reviews. We respect your privacy and are committed to protecting your personal information. This privacy policy explains how we collect, use, and disclose your personal information when you use our website.
+            Welcome to {websiteName}, your go-to source for the latest movie news, ratings, and reviews. We respect your privacy and are committed to protecting your personal information. This privacy policy explains how we collect, use, and disclose your personal information when you use our website.
             </div>
           </div>
           <ol className='row gap-3 text-white small'>

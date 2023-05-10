@@ -1,9 +1,17 @@
 import React from 'react'
+import { Helmet } from 'react-helmet';
 import './style.scss'
 
-const TermsOfUse = () => {
+const TermsOfUse = ({websiteName}) => {
   return (
     <>
+    <Helmet>
+      <title>Terms and Conditions - Your Agreement with {`${websiteName}`}</title>
+      <meta name="title" content={`Terms and Conditions - Your Agreement with ${websiteName}`} />
+      <meta name="description" content={`By using ${websiteName}, you agree to our terms and conditions. Learn more about the rules and guidelines that govern your use of our website.`} />
+      <meta name="keywords" content="terms and conditions, terms of use, website rules, website guidelines, user agreement, website policies" />
+      <meta name="robots" content="index, follow"></meta>
+    </Helmet>
     <div className="container pt-4">
       <div className="row">
         <div className="col-12">
@@ -12,7 +20,7 @@ const TermsOfUse = () => {
           </div>
           <div className="row small">
             <div className="col-12 small text-white pb-3">
-            Welcome to MovieWalas, your go-to source for the latest movie news, ratings, and reviews. By using our website, you agree to comply with the following terms and conditions:
+            Welcome to {websiteName}, your go-to source for the latest movie news, ratings, and reviews. By using our website, you agree to comply with the following terms and conditions:
             </div>
           </div>
           <ol className='row gap-3 text-white small'>

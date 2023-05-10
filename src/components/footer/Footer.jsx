@@ -18,7 +18,7 @@ const Footer = () => {
                         <Link className="text-white" to='/about-us'>About</Link>
                     </li>
                     <li className="menuItem">
-                        <Link className="text-white" to='/terms-of-use'>Terms Of Use</Link>
+                        <Link className="text-white" to='/terms-and-conditions'>Terms Of Use</Link>
                     </li>
                     <li className="menuItem">
                         <Link className="text-white" to='/privacy-policy'>Privacy Policy</Link>
