@@ -86,8 +86,8 @@ function App() {
         <Route path='/movie' exact element={<ExploreMovie websiteName={websiteName}/>}/>
         <Route path='/tv' exact element={<ExploreTv websiteName={websiteName}/>}/>
         <Route path='/privacy-policy' exact element={<PrivacyPolicy websiteName={websiteName}/>}/>
-        <Route path='/terms-of-use' exact element={<TermsOfUse websiteName={websiteName}/>}/>
-        <Route path='/about-us' exact element={<AboutUs a={a} websiteName={websiteName}/>}/>
+        <Route path='/terms-and-conditions' exact element={<TermsOfUse websiteName={websiteName}/>}/>
+        <Route path='/about-us' exact element={<AboutUs websiteName={websiteName}/>}/>
         <Route path='/geners/:genreName' element={<ExploreGeneres websiteName={websiteName}/>}/>
         <Route path='*' element={<PageNotFound websiteName={websiteName}/>}/>
       </Routes>

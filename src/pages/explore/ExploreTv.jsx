@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from 'react-helmet';
 import { useParams, useSearchParams  } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Select from "react-select";
@@ -22,7 +23,7 @@ const sortbyData = [
     { value: "original_title.asc", label: "Title (A-Z)" },
 ];
 
-const Explore = () => {
+const Explore = ({websiteName}) => {
     
     const [data, setData] = useState(null);
     const [pageNum, setPageNum] = useState(1);
@@ -98,6 +99,15 @@ const Explore = () => {
     };
 
     return (
+        <>
+        <Helmet>
+            <title>Explore Latest TV Shows and Episodes - {`${websiteName}`}</title>
+            <meta name="title" content={`Explore Latest TV Shows and Episodes - ${websiteName}`} />
+            <meta name="description" content={`Keep up with the latest TV shows and episodes at ${websiteName}. Find out what other viewers think about the latest releases and discover new shows to add to your queue.`} />
+            <meta name="keywords" content={`latest TV shows, episodes, explore TV shows, queue, ${websiteName}`} />
+            <meta name="robots" content="index, follow"></meta>
+            <link rel="canonical" href="https://moviewalas.com/tv"/>
+        </Helmet>
         <div className="container-fluid explorePage">
             <div className="container">
                 <div className="row mx-0 mb-3 align-items-center">
@@ -165,6 +175,7 @@ const Explore = () => {
                 )}
             </div>
         </div>
+        </>
     );
 };
 

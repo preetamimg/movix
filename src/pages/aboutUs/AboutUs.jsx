@@ -11,6 +11,7 @@ const AboutUs = ({websiteName}) => {
       <meta name="description" content={`Learn more about ${websiteName}, the ultimate source for the latest movie news, ratings, and reviews. Discover our mission, team, and values.`} />
       <meta name="keywords" content="about us, movie news, movie reviews, our mission, our team, our values" />
       <meta name="robots" content="index, follow"></meta>
+      <link rel="canonical" href="https://moviewalas.com/about-us"/>
     </Helmet>
     <div className="container pt-4">
       <div className="row">

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from 'react-helmet';
 import { useParams, useSearchParams  } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Select from "react-select";
@@ -22,7 +23,7 @@ const sortbyData = [
     { value: "original_title.asc", label: "Title (A-Z)" },
 ];
 
-const Explore = () => {
+const Explore = ({websiteName}) => {
     
     const [data, setData] = useState(null);
     const [pageNum, setPageNum] = useState(1);
@@ -31,7 +32,7 @@ const Explore = () => {
     const [sortby, setSortby] = useState(null);
     const { mediaType } = useParams();
     let [searchParams] = useSearchParams();
-    console.log('::::::::::::::::::',searchParams.get('type')); 
+    // console.log('::::::::::::::::::',searchParams.get('type')); 
     const { data: genresData } = useFetch(`/genre/movie/list`);
 
     const fetchInitialData = () => {
@@ -98,6 +99,15 @@ const Explore = () => {
     };
 
     return (
+        <>
+        <Helmet>
+          <title>Explore Latest Movies and TV Shows - {`${websiteName}`}</title>
+          <meta name="title" content={`Explore Latest Movies and TV Shows - ${websiteName}`} />
+          <meta name="description" content={`Discover the latest movies and TV shows at ${websiteName}. Find out what other viewers think about the latest releases and discover new movies to add to your watchlist.`} />
+          <meta name="keywords" content={`latest movies, TV shows, explore movies, watchlist, ${websiteName}`} />
+          <meta name="robots" content="index, follow"></meta>
+            <link rel="canonical" href="https://moviewalas.com/movie"/>
+        </Helmet>
         <div className="container-fluid explorePage">
             <div className="container">
                 <div className="row mx-0 mb-3 align-items-center">
@@ -165,6 +175,7 @@ const Explore = () => {
                 )}
             </div>
         </div>
+        </>
     );
 };
 

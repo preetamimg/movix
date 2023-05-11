@@ -10,6 +10,7 @@ const PrivacyPolicy = ({websiteName}) => {
       <meta name="description" content={`At ${websiteName}, we are committed to protecting your personal information. Learn how we collect, use, and disclose your information in our privacy policy.`} />
       <meta name="keywords" content="privacy policy, personal information, data collection, data protection, online privacy, website security" />
       <meta name="robots" content="index, follow"></meta>
+      <link rel="canonical" href="https://moviewalas.com/privacy-policy/"/>
     </Helmet>
     <div className="container pt-4">
       <div className="row">

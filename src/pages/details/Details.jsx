@@ -77,11 +77,12 @@ const Details = ({websiteName}) => {
     {(mediaType === 'person') ? (
       <>
       <Helmet>
-        <title>[Actor/Actress Name] - Movies and TV Shows featuring [Actor/Actress] - {`${websiteName}`}</title>
-        <meta name="title" content={`[Actor/Actress Name] - Movies and TV Shows featuring [Actor/Actress] - ${websiteName}`} />
-        <meta name="description" content={`Explore the movies and TV shows featuring [Actor/Actress Name] on ${websiteName}. Learn more about [Actor/Actress] and their work in the film and television industry.`} />
-        <meta name="keywords" content={` [Actor/Actress Name], movies, TV shows, film industry, television industry,${websiteName}`} />
+        <title>{`${person?.name}`} - Movies and TV Shows featuring {`${person?.name}`} - {`${websiteName}`}</title>
+        <meta name="title" content={`${person?.name} - Movies and TV Shows featuring ${person?.name} - ${websiteName}`} />
+        <meta name="description" content={`Explore the movies and TV shows featuring ${person?.name} on ${websiteName}. Learn more about ${person?.name} and their work in the film and television industry.`} />
+        <meta name="keywords" content={` ${person?.name}, movies, TV shows, film industry, television industry,${websiteName}`} />
         <meta name="robots" content="index, follow"></meta>
+      <link rel="canonical" href={`https://moviewalas.com/person/${person?.id}`}/>
       </Helmet>
       <PersonBanner data={person} loading={personLoading}/>
       <RelatedMovie mediaType={mediaType} id={id}/>
@@ -96,6 +97,7 @@ const Details = ({websiteName}) => {
       <meta name="description" content={`Get the latest movie ratings and reviews at ${websiteName}. Find out what other movie-goers think about the latest releases and discover new movies to add to your watchlist.`} />
       <meta name="keywords" content={`movie ratings, movie reviews, latest movies, watchlist,${websiteName} `} />
       <meta name="robots" content="index, follow"></meta>
+      <link rel="canonical" href={`https://moviewalas.com/movie/${data?.id}`}/>
     </Helmet>
       ) : (
         
@@ -105,6 +107,7 @@ const Details = ({websiteName}) => {
       <meta name="description" content={`Keep up with the latest TV show ratings and reviews at ${websiteName}. Find out what other viewers think about the latest episodes and discover new shows to add to your queue.`} />
       <meta name="keywords" content={`TV show ratings, TV show reviews, latest episodes, queue, ${websiteName} `} />
       <meta name="robots" content="index, follow"></meta>
+      <link rel="canonical" href={`https://moviewalas.com/tv/${data?.id}`}/>
     </Helmet>
       )}
       <DetailBanner video={data?.results?.[0]} crew={credits?.crew}/>

@@ -14,6 +14,7 @@ const Home = ({websiteName}) => {
         <meta name="description" content={`Find the latest movies, ratings, trailers, and TV shows on ${websiteName}. Get all the details about your favorite films and shows, including cast, category, and reviews. Stay updated with the latest news and trends in the entertainment industry.`} />
         <meta name="keywords" content="movie news, movie ratings, movie reviews, latest movies, TV shows, trailers, cast, categories" />
         <meta name="robots" content="index, follow"></meta>
+        <link rel="canonical" href="https://moviewalas.com/"/>
       </Helmet>
       <HeroBanner/>
       <Trending/>

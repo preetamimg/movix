@@ -11,12 +11,13 @@ const TermsOfUse = ({websiteName}) => {
       <meta name="description" content={`By using ${websiteName}, you agree to our terms and conditions. Learn more about the rules and guidelines that govern your use of our website.`} />
       <meta name="keywords" content="terms and conditions, terms of use, website rules, website guidelines, user agreement, website policies" />
       <meta name="robots" content="index, follow"></meta>
+      <link rel="canonical" href="https://moviewalas.com/terms-and-conditions/"/>
     </Helmet>
     <div className="container pt-4">
       <div className="row">
         <div className="col-12">
           <div className="row">
-            <div className="col-12 text-white h6 text-center pb-4">Terms of Use</div>
+            <div className="col-12 text-white h6 text-center pb-4">Terms and Conditions</div>
           </div>
           <div className="row small">
             <div className="col-12 small text-white pb-3">

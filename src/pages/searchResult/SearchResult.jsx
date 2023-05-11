@@ -1,4 +1,5 @@
 import React,{useState, useEffect} from 'react'
+import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import {FetchDataFromApi} from './../../utils/api'
@@ -6,7 +7,7 @@ import noResults from './../../assets/img/no-results.png'
 import Spinner from '../../components/spinner/Spinner'
 import './style.scss'
 import MovieCard from '../../components/movieCard/MovieCard'
-const SearchResult = () => {
+const SearchResult = ({websiteName}) => {
   const [data, setData] = useState(null);
   const [pageNum, setPageNum] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -52,6 +53,15 @@ useEffect(()=> {
 console.log(data)
 
   return (
+    <>
+    <Helmet>
+      <title>Search Movies and TV Shows - {`${websiteName}`}</title>
+      <meta name="title" content={`Search Movies and TV Shows - ${websiteName}`} />
+      <meta name="description" content={`Find the movies and TV shows you're looking for with the search feature at ${websiteName}. Discover new releases, check ratings, and read reviews.`} />
+      <meta name="keywords" content={`search movies, search TV shows, find movies, find TV shows, ratings, reviews, ${websiteName}`} />
+      <meta name="robots" content="index, follow"></meta>
+      <link rel="canonical" href={`https://moviewalas.com/search/${query}`}/>
+    </Helmet>
     <div className='container-fluid searchResultsPage'>
       <div className="container">
         {loading && <Spinner initial={true}/>}
@@ -88,6 +98,7 @@ console.log(data)
       </div>
       
     </div>
+    </>
   )
 }
 
