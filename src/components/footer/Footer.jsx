@@ -31,18 +31,15 @@ const Footer = () => {
                 All movie information, ratings, and reviews provided on this website are for informational purposes only. MovieWalas does not host any copyrighted content and is not responsible for the accuracy, compliance, legality, or decency of any third-party content accessible through our website.
                 </div>
                 <div className="socialIcons">
-                    <span className="icon">
+                    <a target="_blank" title="Facebook" href="https://www.facebook.com/profile.php?id=100092343802734" className="icon text-white">
                         <FaFacebookF />
-                    </span>
-                    <span className="icon">
+                    </a>
+                    <a target="_blank" title="Instagram" href="https://www.instagram.com/moviewalas_official/" className="icon text-white">
                         <FaInstagram />
-                    </span>
-                    <span className="icon">
+                    </a>
+                    <a target="_blank" title="Twitter" href="https://twitter.com/moviewalas/" className="icon text-white">
                         <FaTwitter />
-                    </span>
-                    <span className="icon">
-                        <FaLinkedin />
-                    </span>
+                    </a>
                 </div>
             </div>
         </footer>
