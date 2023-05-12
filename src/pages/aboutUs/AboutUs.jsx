@@ -55,8 +55,8 @@ const AboutUs = ({websiteName}) => {
                             src={team_m_jitendra}
                             // srcSet={`${team_m_jitendra} 400w, ${team_1x_jitendra} 900w, ${team_2x_jitendra} 1080w`}
                             alt={'Jitendra Kumar Bijarnia (Director/Founder)'}
-                            width={"75"}
-                            height={"75"}
+                            width={"146"}
+                            height={"146"}
                           />
                         </div>
                         <div className="col-lg-12 col-8 mt-lg-0 px-3">
@@ -79,8 +79,8 @@ const AboutUs = ({websiteName}) => {
                             src={team_m_avatar}
                             // srcSet={`${team_m_avatar} 400w, ${team_1x_avatar} 900w, ${team_2x_avatar} 1080w`}
                             alt={'Preetam Bohara (Co-Founder)'}
-                            width={"75"}
-                            height={"75"}
+                            width={"146"}
+                            height={"146"}
                           />
                         </div>
                         <div className="col-lg-12 col-8 mt-lg-0 px-3">
@@ -103,8 +103,8 @@ const AboutUs = ({websiteName}) => {
                             src={team_m_sushil}
                             // srcSet={`${team_m_sushil} 400w, ${team_1x_sushil} 900w, ${team_2x_sushil} 1080w`}
                             alt={'Sushil Choudhary (CEO)'}
-                            width={"75"}
-                            height={"75"}
+                            width={"146"}
+                            height={"146"}
                           />
                         </div>
                         <div className="col-lg-12 col-8 mt-lg-0 px-3">
@@ -127,8 +127,8 @@ const AboutUs = ({websiteName}) => {
                             src={team_m_avatar}
                             // srcSet={`${team_m_avatar} 400w, ${team_1x_avatar} 900w, ${team_2x_avatar} 1080w`}
                             alt={'Pallavi Mishra (CTO)'}
-                            width={"75"}
-                            height={"75"}
+                            width={"146"}
+                            height={"146"}
                           />
                         </div>
                         <div className="col-lg-12 col-8 mt-lg-0 px-3">
