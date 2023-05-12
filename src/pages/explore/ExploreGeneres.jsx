@@ -32,24 +32,27 @@ const Explore = () => {
 
     const { data: genresData } = useFetch(`/genre/list`);
 
-    console.log(genresData?.genres)
-    console.log(genreName)
+    
     let filterGener = genresData?.genres?.filter((x)=> x.name === genreName)
-    console.log(filterGener)
-    let generId = filterGener?.id;
+    let generId = filterGener?.[0]?.id;
 
+    
     const fetchInitialData = () => {
         setLoading(true);
-        FetchDataFromApi(`/discover/movie?with_genres${generId}`).then((res) => {
-            setData(res);
-            setPageNum((prev) => prev + 1);
-            setLoading(false);
-        });
+        console.log('genre id', generId)
+        setTimeout(() => {
+            FetchDataFromApi(`/discover/movie?with_genres=${generId}`, filters).then((res) => {
+                console.log('res', res)
+                setData(res);
+                setPageNum((prev) => prev + 1);
+                setLoading(false);
+            });
+        }, 1000);
     };
 
     const fetchNextPageData = () => {
     FetchDataFromApi(
-            `/discover/movie?with_genres${generId}?page=${pageNum}`,
+            `/discover/movie?page=${pageNum}&with_genres=${generId}`,
             filters
         ).then((res) => {
             if (data?.results) {
@@ -71,7 +74,7 @@ const Explore = () => {
         setSortby(null);
         setGenre(null);
         fetchInitialData();
-    }, [mediaType]);
+    }, [generId]);
 
 
     const onChange = (selectedItems, action) => {

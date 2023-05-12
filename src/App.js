@@ -82,13 +82,17 @@ function App() {
         <Route path='/' element={<Home websiteName={websiteName}/>}/>
         <Route path='/:mediaType/:id' element={<Details websiteName={websiteName}/>}/>
         <Route path='/search/:query' element={<SearchResult websiteName={websiteName}/>}/>
-        <Route path='/person' element={<Navigate to="/"  websiteName={websiteName}/>}/>
         <Route path='/movie' exact element={<ExploreMovie websiteName={websiteName}/>}/>
         <Route path='/tv' exact element={<ExploreTv websiteName={websiteName}/>}/>
         <Route path='/privacy-policy' exact element={<PrivacyPolicy websiteName={websiteName}/>}/>
         <Route path='/terms-and-conditions' exact element={<TermsOfUse websiteName={websiteName}/>}/>
         <Route path='/about-us' exact element={<AboutUs websiteName={websiteName}/>}/>
-        <Route path='/geners/:genreName' element={<ExploreGeneres websiteName={websiteName}/>}/>
+        <Route path='/:mediaType/gener/:genreName' element={<ExploreGeneres websiteName={websiteName}/>}/>
+        {/* redirect routes */}
+        <Route path='/person' element={<Navigate to="/"  websiteName={websiteName}/>}/>
+        <Route path='/movie/gener' element={<Navigate to="/movie"  websiteName={websiteName}/>}/>
+        <Route path='/tv/gener' element={<Navigate to="/tv"  websiteName={websiteName}/>}/>
+        {/* star route */}
         <Route path='*' element={<PageNotFound websiteName={websiteName}/>}/>
       </Routes>
       <Footer/>
