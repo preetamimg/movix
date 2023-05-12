@@ -22,17 +22,6 @@ const AboutUs = ({websiteName}) => {
       <meta name="keywords" content="about us, movie news, movie reviews, our mission, our team, our values" />
       <meta name="robots" content="index, follow"></meta>
       <link rel="canonical" href="https://moviewalas.com/about-us"/>
-      <h2 className='d-none'>Our Story</h2>
-      <h2 className='d-none'>Our Mission</h2>
-      <h2 className='d-none'>Our Team</h2>
-      <h3 className='d-none'>Who We Are</h3>
-      <h3 className='d-none'>Our Background</h3>
-      <h3 className='d-none'>Our Values</h3>
-      <h3 className='d-none'>Meet Our Team</h3>
-      <h4 className='d-none'>Jitendra Kumar Bijarnia (Director)</h4>
-      <h4 className='d-none'>Preetam Bohara (Co-Founder)</h4>
-      <h4 className='d-none'>Sushil Choudhary (CEO)</h4>
-      <h4 className='d-none'>Pallavi Mishra (CTO)</h4>
     </Helmet>
     <section className="container pt-4">
       <div className="row">
@@ -85,8 +74,8 @@ const AboutUs = ({websiteName}) => {
                         </div>
                         <div className="col-lg-12 col-8 mt-lg-0 px-3">
                           <div className="row">
-                        <h4 className="col-12 text-light h6 fw-semibold">Preetam Bohara </h4>
-                        <small className="col-12 text-light fw-medium mb-lg-3">Co-Founder</small>
+                            <h4 className="col-12 text-light h6 fw-semibold">Preetam Bohara </h4>
+                            <small className="col-12 text-light fw-medium mb-lg-3">Co-Founder</small>
                           </div>
                         </div>
                         <p className='col-12 text-light small pt-lg-0 pt-4 px-lg-3 px-4 mb-1'><small>Preetam is our Co-Founder, with a passion for technology and innovation. He has extensive experience in software development and has played a key role in building our platform.</small></p>
@@ -109,8 +98,8 @@ const AboutUs = ({websiteName}) => {
                         </div>
                         <div className="col-lg-12 col-8 mt-lg-0 px-3">
                           <div className="row">
-                        <h4 className="col-12 text-light h6 fw-semibold">Sushil Choudhary </h4>
-                        <small className="col-12 text-light fw-medium mb-lg-3">CEO</small>
+                            <h4 className="col-12 text-light h6 fw-semibold">Sushil Choudhary </h4>
+                            <small className="col-12 text-light fw-medium mb-lg-3">CEO</small>
                           </div>
                         </div>
                         <p className='col-12 text-light small pt-lg-0 pt-4 px-lg-3 px-4 mb-1'><small>Sushil is our CEO, with over 6 years of experience in software development and product management. He provides strategic direction to the team and is committed to creating the best possible experience for our users.</small></p>
@@ -133,8 +122,8 @@ const AboutUs = ({websiteName}) => {
                         </div>
                         <div className="col-lg-12 col-8 mt-lg-0 px-3">
                           <div className="row">
-                        <h4 className="col-12 text-light h6 fw-semibold">Pallavi Mishra </h4>
-                        <small className="col-12 text-light fw-medium mb-lg-3">CTO</small>
+                            <h4 className="col-12 text-light h6 fw-semibold">Pallavi Mishra </h4>
+                            <small className="col-12 text-light fw-medium mb-lg-3">CTO</small>
                           </div>
                         </div>
                         <p className='col-12 text-light small pt-lg-0 pt-4 px-lg-3 px-4 mb-1'><small>Pallavi is our CTO, with a strong background in software engineering and a passion for innovation. She leads our development team and ensures that our platform stays ahead of the curve in terms of technology and user experience.</small></p>
