@@ -72,6 +72,7 @@ const Header = () => {
             navigate('/tv')
         }
         setShowSearch(false)
+        setMobileMenu(false)
     }
 
     return (

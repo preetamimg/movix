@@ -8,7 +8,7 @@ import './style.scss'
 const PersonBanner = ({data, loading}) => {
     const {url} = useSelector((state) => state.home)
     return (
-    <section className='container-fluid personBannerFluid'>
+    <section className='container-fluid personBannerFluid py-3'>
         <div className="container">
             {!loading ? (
                 <>
@@ -19,6 +19,10 @@ const PersonBanner = ({data, loading}) => {
                                     <div className="personBanner">
                                         <Img src={data?.profile_path ? url?.profile_sizes_h632 + data?.profile_path : avatar} alt={'Person Banner'} />
                                     </div>
+                                    
+                                    {data?.name && (
+                                        <div className="personName mt-2 d-md-none">{data?.name}</div>
+                                    )}
                                     <PersonSocial mediaType={'person'} id={data?.id}/>
                                 </div>
                             </div>
@@ -26,7 +30,7 @@ const PersonBanner = ({data, loading}) => {
                         <div className="col-md-7 col-lg-8 col-xl-9">
                             <div className="row">
                                 {data?.name && (
-                                    <div className="col-12 personName">{data?.name}</div>
+                                    <div className="col-12 personName d-none d-md-block">{data?.name}</div>
                                 )}
                                 <div className="col-12">
                                     <div className="heading">Biography :</div>
@@ -81,7 +85,47 @@ const PersonBanner = ({data, loading}) => {
                 </>
             ) : (
                 <>
-                    <div className="text-white">loading</div>
+                    <div className="row personLoaderSection">
+                        <div className="col-md-5 col-lg-4 col-xl-3">
+                            <div className="row mx-0 flex-column">
+                            <div className="col-12 skeleton personImg mb-3"></div>
+                            <div className="col-12 px-0">
+                                <div className="row mx-0 gx-0 mb-3">
+                                    <div className="col-auto skeleton personSocial me-2"></div>
+                                    <div className="col-auto skeleton personSocial me-2"></div>
+                                    <div className="col-auto skeleton personSocial me-2"></div>
+                                    <div className="col-auto skeleton personSocial me-2"></div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div className="col-md-7 col-lg-8 col-xl-9">
+                            <div className="row mx-0 flex-column">
+                                <div className="col-12 personName skeleton mb-3"></div>
+                                <div className="col-12 personBioHead skeleton mb-3"></div>
+                                <div className="col-12 personBioPara skeleton mb-2"></div>
+                                <div className="col-12 personBioPara skeleton mb-2"></div>
+                                <div className="col-12 personBioPara skeleton mb-2"></div>
+                                <div className="col-12 personBioPara skeleton mb-3"></div>
+                                <div className="col-lg-6 col-xl-5 col-md-7 col-8 px-0">
+                                    <div className="row mx-0 gx-0">
+                                        <div className="col-4">
+                                            <div className="infoHead mb-3 skeleton"></div>
+                                            <div className="infoPara skeleton"></div>
+                                        </div>
+                                        <div className="col-4 px-2">
+                                            <div className="infoHead mb-3 skeleton"></div>
+                                            <div className="infoPara skeleton"></div>
+                                        </div>
+                                        <div className="col-4">
+                                            <div className="infoHead mb-3 skeleton"></div>
+                                            <div className="infoPara skeleton"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </>
             )}
         </div>
