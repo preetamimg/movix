@@ -79,23 +79,23 @@ const Header = () => {
             <div className={`container-fluid py-3 header position-relative ${mobileMenu ? 'showMenu' : ''} 
             ${showSearch ? 'showSearch' : ''}`}>
                 <div className="container">
-                    <div className="row align-items-center">
+                    <nav className="row align-items-center">
                         <div className="col logoBox py-2">
                             <img src={logo} alt="logo" width={'180'} height={'21'} onClick={()=> navigate('/')} />
                         </div>
                         {
                             isNarrowScreen ? (
                                 <div className="col-auto">
-                                <ul className="m-0 p-0 list-unstyled d-flex align-items-center">
-                                    <li className="navLink text-white ps-4 text-uppercase fw-bold" 
-                                    onClick={()=> navigationHandler('movie')}>Movies</li>
-                                    <li className="navLink text-white ps-4 text-uppercase fw-bold"
-                                    onClick={()=> navigationHandler('tv')}>TV Shows</li>
-                                    <li className="navLink navIcon text-white ps-4 text-uppercase fw-bold">
-                                        <HiOutlineSearch onClick={openSearchMenu}/>
-                                        </li>
-                                </ul>
-                            </div>
+                                    <ul className="m-0 p-0 list-unstyled d-flex align-items-center">
+                                        <li className="navLink text-white ps-4 text-uppercase fw-bold" 
+                                        onClick={()=> navigationHandler('movie')}>Movies</li>
+                                        <li className="navLink text-white ps-4 text-uppercase fw-bold"
+                                        onClick={()=> navigationHandler('tv')}>TV Shows</li>
+                                        <li className="navLink navIcon text-white ps-4 text-uppercase fw-bold">
+                                            <HiOutlineSearch onClick={openSearchMenu}/>
+                                            </li>
+                                    </ul>
+                                </div>
                             ) : (
                                 <div className="col-auto">
                                 <ul className="m-0 p-0 list-unstyled d-flex align-items-center">
@@ -131,7 +131,7 @@ const Header = () => {
                             onClick={()=> {setShowSearch(false)}}/> 
                             </div>
                         </div>
-                    </div>
+                    </nav>
                 </div>
             </div>
         </header>

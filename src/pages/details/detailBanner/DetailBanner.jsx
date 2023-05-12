@@ -37,7 +37,7 @@ const DetailBanner = ({video, crew}) => {
 
     return (
         <>
-        <div className="container-fluid detailBanner px-0 mb-4" style={{backgroundImage : `url(${bgImg})`}}>
+        <section className="container-fluid detailBanner px-0 mb-4" style={{backgroundImage : `url(${bgImg})`}}>
             <div className="container detailBannerInner px-0">
                 <div className="row mx-0 detailBannerWrapper justify-content-center">
                     <div className="col-lg-12 px-0">
@@ -218,7 +218,7 @@ const DetailBanner = ({video, crew}) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
         </>
     )
 }

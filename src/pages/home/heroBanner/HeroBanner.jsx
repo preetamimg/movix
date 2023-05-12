@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet';
 import './style.scss'
 import useFetch from '../../../hooks/useFetch'
 import { useNavigate } from "react-router-dom"
 import { useSelector } from 'react-redux'
 import Img from './../../../components/lazyLoadImage/Img'
 import imdbLogo from './../../../assets/img/imdbLogo.png'
+import banner780 from './../../../assets/img/banner780.png'
 
 
 const HeroBanner = () => {
@@ -15,20 +17,22 @@ const HeroBanner = () => {
   useEffect(()=> {
     const BannerData = data?.results?.[Math.floor(Math.random() * 20)]
     setBannerInfo(BannerData)
-    console.log(bannerInfo)
+    // console.log(bannerInfo)
 
   }, [data])
   return (
     <>
+    <Helmet>
+      <link rel="preload" as="image" href={banner780} imagesrcset={`${url?.backdrop_sizes_w300 + bannerInfo?.backdrop_path} 400w, ${url?.backdrop_sizes_w780 + bannerInfo?.backdrop_path} 900w, ${url?.backdrop_sizes_w1280 + bannerInfo?.backdrop_path} 1200w`}></link>
+    </Helmet>
     {!loading ? (
-    <div className="heroSection container-fluid mb-3">
+    <section className="heroSection container-fluid mb-3">
       <div className="container heroSectionInner heroSectionBefore position-relative px-0">
         {/* <Img className='heroImg w-100' src={url?.backdrop + bannerInfo?.backdrop_path} alt={'hero section image'}/> */}
         <Img className='heroImg w-100'
             src={url?.backdrop_sizes_w1280 + bannerInfo?.backdrop_path}
             srcSet={`${url?.backdrop_sizes_w300 + bannerInfo?.backdrop_path} 400w, ${url?.backdrop_sizes_w780 + bannerInfo?.backdrop_path} 900w, ${url?.backdrop_sizes_w1280 + bannerInfo?.backdrop_path} 1200w`}
-            alt={'hero banner image'}
-            preload // add the "preload" attribute
+            alt={bannerInfo?.title}
           />
         <div className="row heroDetailBox position-absolute w-100 mx-0">
           <div className="col-lg-6 col-md-8 col-10 movieTitle">{bannerInfo?.title}</div>
@@ -50,7 +54,7 @@ const HeroBanner = () => {
           </div>
         </div>
       </div>
-    </div>) :
+    </section>) :
     (
     <div className="heroSection container-fluid">
       <div className="container heroSectionInner position-relative px-0 skeleton"></div>

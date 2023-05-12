@@ -12,7 +12,7 @@ const PrivacyPolicy = ({websiteName}) => {
       <meta name="robots" content="index, follow"></meta>
       <link rel="canonical" href="https://moviewalas.com/privacy-policy/"/>
     </Helmet>
-    <div className="container pt-4">
+    <section className="container pt-4">
       <div className="row">
         <div className="col-12">
           <div className="row">
@@ -41,7 +41,7 @@ const PrivacyPolicy = ({websiteName}) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
     </>
   )
 }

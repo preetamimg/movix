@@ -10,7 +10,7 @@ const Popular = () => {
     const onTabChange = (tab)=> {
         setEndPoint(tab === 'Movies' ? 'movie' : 'tv')
     }
-    return <div className="container-fluid py-2 py-lg-3">
+    return <section className="container-fluid py-2 py-lg-3">
         <div className="container px-0">
             <div className="row mx-0 align-items-center">
                 <div className="col sectionHeading">Popular</div>
@@ -21,7 +21,7 @@ const Popular = () => {
             </div>
             <Carousel data={data?.results} loading={loading} endPoint={endPoint}/>
         </div>
-    </div>;
+    </section>;
 };
 
 export default Popular;

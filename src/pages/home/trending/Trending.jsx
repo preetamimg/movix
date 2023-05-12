@@ -9,7 +9,7 @@ const Trending = () => {
     const onTabChange = (tab)=> {
         setEndPoint(tab === 'Day' ? 'day' : 'week')
     }
-    return <div className="container-fluid py-3 py-lg-4">
+    return <section className="container-fluid py-3 py-lg-4">
         <div className="container px-0">
             <div className="row mx-0 align-items-center">
                 <div className="col sectionHeading">Trending</div>
@@ -20,7 +20,7 @@ const Trending = () => {
             </div>
             <Carousel data={data?.results} loading={loading}/>
         </div>
-    </div>;
+    </section>;
 };
 
 export default Trending;

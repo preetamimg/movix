@@ -38,7 +38,7 @@ const Cast = ({ data, loading }) => {
     return (
         <>
             {castData?.length > 1 && (
-                <div className="container-fluid castSection py-2 py-lg-3">
+                <section className="container-fluid castSection py-2 py-lg-3">
                 <div className="container position-relative px-0">
                     {castData?.length > 8 && (
                         <>
@@ -87,7 +87,7 @@ const Cast = ({ data, loading }) => {
                         </div>
                     )}
                 </div>
-            </div>
+            </section>
             )}
         </>
         

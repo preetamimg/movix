@@ -8,7 +8,7 @@ import './style.scss'
 const PersonBanner = ({data, loading}) => {
     const {url} = useSelector((state) => state.home)
     return (
-    <div className='container-fluid personBannerFluid'>
+    <section className='container-fluid personBannerFluid'>
         <div className="container">
             {!loading ? (
                 <>
@@ -85,7 +85,7 @@ const PersonBanner = ({data, loading}) => {
                 </>
             )}
         </div>
-    </div>
+    </section>
     )
 }
 

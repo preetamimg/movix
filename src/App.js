@@ -26,14 +26,6 @@ function App() {
     FetchDataFromApi('/configuration').then((res)=>{
       // console.log(res)
       const url = {
-        // backdrop_1280: res.images.secure_base_url + "w1280",
-        // backdrop_780: res.images.secure_base_url + "w780",
-        // backdrop_300: res.images.secure_base_url + "w300",
-        // // mobPoster: res.images.secure_base_url + "w185",
-        // poster: res.images.secure_base_url + "w342",
-        // detailPoster: res.images.secure_base_url + "w500",
-        // profile: res.images.secure_base_url + "w185",
-        // profileDetail: res.images.secure_base_url + "h632",
       }
       for(let ele in res.images){
         if(Array.isArray(res.images[ele])){
@@ -78,19 +70,21 @@ function App() {
     <>
     <Router>
       <Header/>
-      <Routes>
-        <Route path='/' element={<Home websiteName={websiteName}/>}/>
-        <Route path='/:mediaType/:id' element={<Details websiteName={websiteName}/>}/>
-        <Route path='/search/:query' element={<SearchResult websiteName={websiteName}/>}/>
-        <Route path='/person' element={<Navigate to="/"  websiteName={websiteName}/>}/>
-        <Route path='/movie' exact element={<ExploreMovie websiteName={websiteName}/>}/>
-        <Route path='/tv' exact element={<ExploreTv websiteName={websiteName}/>}/>
-        <Route path='/privacy-policy' exact element={<PrivacyPolicy websiteName={websiteName}/>}/>
-        <Route path='/terms-and-conditions' exact element={<TermsOfUse websiteName={websiteName}/>}/>
-        <Route path='/about-us' exact element={<AboutUs websiteName={websiteName}/>}/>
-        <Route path='/geners/:genreName' element={<ExploreGeneres websiteName={websiteName}/>}/>
-        <Route path='*' element={<PageNotFound websiteName={websiteName}/>}/>
-      </Routes>
+      <main>
+        <Routes>
+          <Route path='/' element={<Home websiteName={websiteName}/>}/>
+          <Route path='/:mediaType/:id' element={<Details websiteName={websiteName}/>}/>
+          <Route path='/search/:query' element={<SearchResult websiteName={websiteName}/>}/>
+          <Route path='/person' element={<Navigate to="/"  websiteName={websiteName}/>}/>
+          <Route path='/movie' exact element={<ExploreMovie websiteName={websiteName}/>}/>
+          <Route path='/tv' exact element={<ExploreTv websiteName={websiteName}/>}/>
+          <Route path='/privacy-policy' exact element={<PrivacyPolicy websiteName={websiteName}/>}/>
+          <Route path='/terms-and-conditions' exact element={<TermsOfUse websiteName={websiteName}/>}/>
+          <Route path='/about-us' exact element={<AboutUs websiteName={websiteName}/>}/>
+          <Route path='/geners/:genreName' element={<ExploreGeneres websiteName={websiteName}/>}/>
+          <Route path='*' element={<PageNotFound websiteName={websiteName}/>}/>
+        </Routes>
+      </main>
       <Footer/>
     </Router>
     </>

@@ -108,7 +108,7 @@ const Explore = ({websiteName}) => {
             <meta name="robots" content="index, follow"></meta>
             <link rel="canonical" href="https://moviewalas.com/tv"/>
         </Helmet>
-        <div className="container-fluid explorePage">
+        <section className="container-fluid explorePage">
             <div className="container">
                 <div className="row mx-0 mb-3 align-items-center">
                     <div className="col-md pageTitle">Explore TV Shows</div>
@@ -174,7 +174,7 @@ const Explore = ({websiteName}) => {
                     </>
                 )}
             </div>
-        </div>
+        </section>
         </>
     );
 };

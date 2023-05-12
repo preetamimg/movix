@@ -62,7 +62,7 @@ console.log(data)
       <meta name="robots" content="index, follow"></meta>
       <link rel="canonical" href={`https://moviewalas.com/search/${query}`}/>
     </Helmet>
-    <div className='container-fluid searchResultsPage'>
+    <section className='container-fluid searchResultsPage'>
       <div className="container">
         {loading && <Spinner initial={true}/>}
         {!loading && (
@@ -97,7 +97,7 @@ console.log(data)
         )}
       </div>
       
-    </div>
+    </section>
     </>
   )
 }
