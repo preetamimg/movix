@@ -9,6 +9,8 @@ const Trending = () => {
     const onTabChange = (tab)=> {
         setEndPoint(tab === 'Day' ? 'day' : 'week')
     }
+    const reducedArray = data?.results?.slice(0, 12)
+    console.log('reduce', reducedArray)
     return <section className="container-fluid py-3 py-lg-4">
         <div className="container px-0">
             <div className="row mx-0 align-items-center">
@@ -18,7 +20,7 @@ const Trending = () => {
                     onTabChange = {onTabChange}/>
                     </div>
             </div>
-            <Carousel data={data?.results} loading={loading}/>
+            <Carousel data={reducedArray} loading={loading}/>
         </div>
     </section>;
 };

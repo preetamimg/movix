@@ -10,6 +10,7 @@ import Img from './../../../components/lazyLoadImage/Img'
 import PosterFallback from './../../../assets/img/no-poster.avif'
 import {PlayIcon} from './../../../components/playIcon/PlayIcon'
 import VideoPopup from '../../../components/videoPopup/VideoPopup'
+import Streaming from './Streaming'
 
 
 const DetailBanner = ({video, crew}) => {
@@ -59,11 +60,14 @@ const DetailBanner = ({video, crew}) => {
                                             <div className="col-12 subTitle">
                                                 {data?.tagline}
                                             </div>
+                                            <div className="col-12">
+                                                <Streaming mediaType={mediaType} id={id}/>
+                                            </div>
                                             <div className="col-12 genres">
                                                 <div className="row mx-0 g-2 g-lg-3 genresInner">
                                                     {data?.genres.map((genre)=> (
                                                         <div className="col-auto ps-0 genre" key={genre.id}
-                                                        onClick={()=> Navigate(`/geners/${genre.name}`)}>
+                                                        onClick={()=> Navigate(`/${mediaType}/gener/${genre.name}`)}>
                                                             <div className="genreText">{genre.name}</div>
                                                         </div>
                                                     ))}

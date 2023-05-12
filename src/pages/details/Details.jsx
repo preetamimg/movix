@@ -20,8 +20,6 @@ const Details = ({websiteName}) => {
   const [creditLoading,  setCreditLoading] = useState(false)
   const [person,  setPerson] = useState('')
   const [personLoading,  setPersonLoading] = useState(false)
-  const [personSocial, setPersonSocial] = useState('')
-  const [socialLoading, setSocialLoading] = useState(false)
   // console.log(mediaType)
 
   
@@ -51,14 +49,6 @@ const Details = ({websiteName}) => {
     setPersonLoading(false)
     })
   }
-  const fetchpersonSocialData = () => {
-    setSocialLoading(true)
-    FetchDataFromApi(`/${mediaType}/${id}/external_ids`).then((res)=> {
-      setPersonSocial(res)
-      setSocialLoading(false)
-    })
-  }
-  // console.log(personSocial)
   
 
   useEffect(()=> {
@@ -67,11 +57,9 @@ const Details = ({websiteName}) => {
       fetchCastData()
     } else {
       fetchpersonData()
-      // fetchpersonSocialData()
     }
   }, [id])
 
-  // console.log(mediaType)
   return (
     <>
     {(mediaType === 'person') ? (

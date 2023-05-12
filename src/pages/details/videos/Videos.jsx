@@ -44,10 +44,10 @@ const Videos = ({ data, loading }) => {
                     {data?.results?.length > 4 && (
                         <>
                             <BsFillArrowLeftCircleFill
-                            className="carouselLeftNav arrow d-none d-md-block"
+                            className="carouselLeftNav arrow d-none bg-white rounded-pill d-md-block"
                             onClick={()=> navigation('left')}/>
                             <BsFillArrowRightCircleFill
-                            className="carouselRightNav arrow d-none d-md-block"
+                            className="carouselRightNav arrow d-none bg-white rounded-pill d-md-block"
                             onClick={()=> navigation('right')}/>
                         </>
                     )}
