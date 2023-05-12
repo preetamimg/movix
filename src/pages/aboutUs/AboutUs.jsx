@@ -51,10 +51,12 @@ const AboutUs = ({websiteName}) => {
                     <div className="col-12">
                       <div className="row align-items-center py-3">
                         <div className="col-md-3 col-sm-2 col-3 rounded-pill shadow overflow-hidden mb-lg-3 ms-lg-3 ms-4 d-grid px-0">
-                          <Img className='teamImg w-100'
+                          <Img className='teamImg w-100 h-auto'
                             src={team_m_jitendra}
                             // srcSet={`${team_m_jitendra} 400w, ${team_1x_jitendra} 900w, ${team_2x_jitendra} 1080w`}
                             alt={'Jitendra Kumar Bijarnia (Director/Founder)'}
+                            width={"75"}
+                            height={"75"}
                           />
                         </div>
                         <div className="col-lg-12 col-8 mt-lg-0 px-3">
@@ -73,10 +75,12 @@ const AboutUs = ({websiteName}) => {
                     <div className="col-12">
                       <div className="row align-items-center py-3">
                         <div className="col-md-3 col-sm-2 col-3 rounded-pill shadow overflow-hidden mb-lg-3 ms-lg-3 ms-4 d-grid px-0">
-                          <Img className='teamImg w-100'
+                          <Img className='teamImg w-100 h-auto'
                             src={team_m_avatar}
                             // srcSet={`${team_m_avatar} 400w, ${team_1x_avatar} 900w, ${team_2x_avatar} 1080w`}
                             alt={'Preetam Bohara (Co-Founder)'}
+                            width={"75"}
+                            height={"75"}
                           />
                         </div>
                         <div className="col-lg-12 col-8 mt-lg-0 px-3">
@@ -95,10 +99,12 @@ const AboutUs = ({websiteName}) => {
                     <div className="col-12">
                       <div className="row align-items-center py-3">
                         <div className="col-md-3 col-sm-2 col-3 rounded-pill shadow overflow-hidden mb-lg-3 ms-lg-3 ms-4 d-grid px-0">
-                          <Img className='teamImg w-100'
+                          <Img className='teamImg w-100 h-auto'
                             src={team_m_sushil}
                             // srcSet={`${team_m_sushil} 400w, ${team_1x_sushil} 900w, ${team_2x_sushil} 1080w`}
                             alt={'Sushil Choudhary (CEO)'}
+                            width={"75"}
+                            height={"75"}
                           />
                         </div>
                         <div className="col-lg-12 col-8 mt-lg-0 px-3">
@@ -117,10 +123,12 @@ const AboutUs = ({websiteName}) => {
                     <div className="col-12">
                       <div className="row align-items-center py-3">
                         <div className="col-md-3 col-sm-2 col-3 rounded-pill shadow overflow-hidden mb-lg-3 ms-lg-3 ms-4 d-grid px-0">
-                          <Img className='teamImg w-100'
+                          <Img className='teamImg w-100 h-auto'
                             src={team_m_avatar}
                             // srcSet={`${team_m_avatar} 400w, ${team_1x_avatar} 900w, ${team_2x_avatar} 1080w`}
                             alt={'Pallavi Mishra (CTO)'}
+                            width={"75"}
+                            height={"75"}
                           />
                         </div>
                         <div className="col-lg-12 col-8 mt-lg-0 px-3">
