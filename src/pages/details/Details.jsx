@@ -11,6 +11,7 @@ import Recommended from './carousels/Reccommend'
 import {FetchDataFromApi} from './../../utils/api'
 import PersonBanner from './personBanner/PersonBanner'
 import RelatedMovie from './carousels/RelatedMovie'
+import Reviews from './detailBanner/Reviews';
 const Details = ({websiteName}) => {
 
   const {mediaType, id} = useParams();
@@ -103,6 +104,7 @@ const Details = ({websiteName}) => {
       <Videos data={data} loading={loading}/>
       <Simillar mediaType={mediaType} id={id}/>
       <Recommended mediaType={mediaType} id={id}/>
+      <Reviews mediaType={mediaType} id={id}/>
       </>
     ) }
     </>

@@ -199,6 +199,31 @@
         }
     }
 }
+.viewText {
+    font-size: 16px;
+    cursor: pointer;
+}
+.reviewCard {
+    & .reviewImage {
+        height: 55px;
+        width: 55px;
+    }
+    & .imageText {
+        font-size: 24px;
+    }
+    & .reviewName {
+        opacity: 0.9;
+        font-size: 20px;
+    }
+    & .reviewDate {
+        font-size: 14px;
+        opacity: 0.7;
+    }
+    & .reviewText {
+        font-size: 15px;
+        opacity: 0.8;
+    }
+}
 
 @media (max-width: 991.99px) {
     .detailBanner {
@@ -206,6 +231,9 @@
         &::before {
             display: none;
         }
+    }
+    .viewText {
+        font-size: 14px;
     }
 }
 
@@ -232,4 +260,24 @@
             }
         }
     }
+    
+.reviewCard {
+    & .reviewImage {
+        height: 45px;
+        width: 45px;
+    }
+    & .imageText {
+        font-size: 22px;
+    }
+    & .reviewName {
+        font-size: 16px;
+        font-weight: 700;
+    }
+    & .reviewDate {
+        font-size: 12px;
+    }
+    & .reviewText {
+        font-size: 14px;
+    }
+}
 }
