@@ -1,15 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import Img from './../../components/lazyLoadImage/Img'
-// import team_2x_avatar from './../../assets/img/team/2x-avatar.png'
-// import team_1x_avatar from './../../assets/img/team/1x-avatar.png'
-import team_m_avatar from './../../assets/img/team/m-avatar.png'
-// import team_2x_jitendra from './../../assets/img/team/2x-jitendra-kumar-bijarnia.png'
-// import team_1x_jitendra from './../../assets/img/team/1x-jitendra-kumar-bijarnia.png'
-import team_m_jitendra from './../../assets/img/team/m-jitendra-kumar-bijarnia.png'
-// import team_2x_sushil from './../../assets/img/team/2x-sushil-choudhary.png'
-// import team_1x_sushil from './../../assets/img/team/1x-sushil-choudhary.png'
-import team_m_sushil from './../../assets/img/team/m-sushil-choudhary.png'
+import team_m_avatar from './../../assets/img/team/m-avatar.avif'
+import team_m_jitendra from './../../assets/img/team/m-jitendra-kumar-bijarnia.avif'
+import team_m_sushil from './../../assets/img/team/m-sushil-choudhary.avif'
 
 
 const AboutUs = ({websiteName}) => {
@@ -22,6 +16,17 @@ const AboutUs = ({websiteName}) => {
       <meta name="keywords" content="about us, movie news, movie reviews, our mission, our team, our values" />
       <meta name="robots" content="index, follow"></meta>
       <link rel="canonical" href="https://moviewalas.com/about-us"/>
+
+      <meta property="og:url" content="https://moviewalas.com/about-us" />
+      <meta property="og:title" content={`About ${websiteName} Learn More About Our Movie News and Reviews Site`} />
+      <meta property="og:description" content={`Learn more about ${websiteName}, the ultimate source for the latest movie news, ratings, and reviews. Discover our mission, team, and values.`} />
+      <meta property="og:image" content={team_m_jitendra} />
+      <meta property="og:image:secure_url" content={team_m_jitendra} />
+      
+      <meta name="twitter:card" content={`Learn more about ${websiteName}, the ultimate source for the latest movie news, ratings, and reviews. Discover our mission, team, and values.`} />
+      <meta name="twitter:title" content={`About ${websiteName} Learn More About Our Movie News and Reviews Site`} />
+      <meta name="twitter:description" content={`Learn more about ${websiteName}, the ultimate source for the latest movie news, ratings, and reviews. Discover our mission, team, and values.`} />
+      <meta name="twitter:image" content={team_m_jitendra} />
     </Helmet>
     <section className="container pt-4">
       <div className="row">
@@ -66,7 +71,6 @@ const AboutUs = ({websiteName}) => {
                         <div className="col-md-3 col-sm-2 col-3 rounded-pill shadow overflow-hidden mb-lg-3 ms-lg-3 ms-4 d-grid px-0">
                           <Img className='teamImg w-100 h-auto'
                             src={team_m_avatar}
-                            // srcSet={`${team_m_avatar} 400w, ${team_1x_avatar} 900w, ${team_2x_avatar} 1080w`}
                             alt={'Preetam Bohara (Co-Founder)'}
                             width={"146"}
                             height={"146"}
@@ -90,7 +94,6 @@ const AboutUs = ({websiteName}) => {
                         <div className="col-md-3 col-sm-2 col-3 rounded-pill shadow overflow-hidden mb-lg-3 ms-lg-3 ms-4 d-grid px-0">
                           <Img className='teamImg w-100 h-auto'
                             src={team_m_sushil}
-                            // srcSet={`${team_m_sushil} 400w, ${team_1x_sushil} 900w, ${team_2x_sushil} 1080w`}
                             alt={'Sushil Choudhary (CEO)'}
                             width={"146"}
                             height={"146"}
@@ -114,7 +117,6 @@ const AboutUs = ({websiteName}) => {
                         <div className="col-md-3 col-sm-2 col-3 rounded-pill shadow overflow-hidden mb-lg-3 ms-lg-3 ms-4 d-grid px-0">
                           <Img className='teamImg w-100 h-auto'
                             src={team_m_avatar}
-                            // srcSet={`${team_m_avatar} 400w, ${team_1x_avatar} 900w, ${team_2x_avatar} 1080w`}
                             alt={'Pallavi Mishra (CTO)'}
                             width={"146"}
                             height={"146"}
