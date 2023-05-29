@@ -12,6 +12,7 @@ import {FetchDataFromApi} from './../../utils/api'
 import PersonBanner from './personBanner/PersonBanner'
 import RelatedMovie from './carousels/RelatedMovie'
 import Reviews from './detailBanner/Reviews';
+import Ads from '../../components/ads/Ads';
 const Details = ({websiteName}) => {
 
   const {mediaType, id} = useParams();
@@ -100,6 +101,7 @@ const Details = ({websiteName}) => {
     </Helmet>
       )}
       <DetailBanner video={data?.results?.[0]} crew={credits?.crew}/>
+      <Ads/>
       <Cast data={credits} loading={creditLoading}/>
       <Videos data={data} loading={loading}/>
       <Simillar mediaType={mediaType} id={id}/>

@@ -6,6 +6,7 @@ import Trending from './trending/Trending';
 import Popular from './popular/Popular';
 import TopRated from './topRated/TopRated';
 import ogImg from './../../assets/img/android-chrome-256x256.png';
+import Ads from '../../components/ads/Ads';
 const Home = ({websiteName}) => {
   return (
     <>
@@ -29,6 +30,7 @@ const Home = ({websiteName}) => {
         <meta name="twitter:image" content={ogImg} />
       </Helmet>
       <HeroBanner/>
+      <Ads/>
       <Trending/>
       <Popular/>
       <TopRated/>
