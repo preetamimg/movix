@@ -33,7 +33,7 @@ function App() {
                 url[`${ele}_${data}`] = `${res.images.base_url}${data}`
             }
         }
-    console.log(ele)
+    // console.log(ele)
     }
     console.log(url)
       dispatch(getApiConfiguration(url))

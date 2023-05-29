@@ -4,7 +4,7 @@ import Carousel from "../../../components/carousel/Carousel";
 
 const RelatedMovie = ({ mediaType, id }) => {
     const { data, loading, error } = useFetch(`/${mediaType}/${id}/combined_credits`);
-    console.log(data)
+    // console.log(data)
     data?.cast.sort(function(a,b){
         return new Date(b.release_date) - new Date(a.release_date)
     })

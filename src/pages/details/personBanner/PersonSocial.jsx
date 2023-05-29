@@ -10,7 +10,7 @@ const PersonSocial = ({ mediaType, id }) => {
     const { data, loading, error } = useFetch(`/${mediaType}/${id}/external_ids`);
     console.log(data)
     return (
-        <div className='d-flex align-items-center mt-3'>
+        <div className='d-flex align-items-center mt-md-3'>
             {data?.twitter_id && (
             <a className="socialAnchor" target='_blank' href={`https://twitter.com/${data?.twitter_id}`}>
                 <img src={TwitterIcon} alt="twitter icon" />

@@ -104,7 +104,7 @@ const Explore = () => {
     };
 
     return (
-        <div className="container-fluid explorePage">
+        <div className="container-fluid explorePage py-3">
             <div className="container">
                 <div className="row mx-0 mb-3 align-items-center">
                     <div className="col-md pageTitle">

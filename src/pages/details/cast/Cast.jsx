@@ -13,7 +13,7 @@ const Cast = ({ data, loading }) => {
     const { url } = useSelector((state) => state.home);
     let castData = data?.cast;
 
-    console.log(castData)
+    // console.log(castData)
 
     const skeleton = () => {
         return (
