@@ -30,10 +30,14 @@ const Home = ({websiteName}) => {
         <meta name="twitter:image" content={ogImg} />
       </Helmet>
       <HeroBanner/>
-      <Ads/>
       <Trending/>
       <Popular/>
       <TopRated/>
+      <div className="container-fluid">
+        <div className="container overflow-hidden bg-white rounded">
+          <Ads slot={9581863358}/>
+        </div>
+      </div>
     </>
   )
 }

@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import dayjs from "dayjs";
 import Img from "../lazyLoadImage/Img";
 import PosterFallback from "../../assets/img/no-poster.avif";
+import Ads from './../ads/Ads'
 import './style.scss'
 import CircleRating from './../circleRating/CircleRating';
 
@@ -50,6 +51,17 @@ const Carousel = ({data, loading, endPoint}) => {
                     {data?.map((item)=> {
                         // const posterUrl = item.poster_path ? url.poster + item.poster_path : PosterFallback
                         return (
+                            <>
+                            {
+                                item === 'item' ? (
+                                    <>
+                                        <div className="carouselItem col">
+                                            <Ads slot={2747837599}/>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                    
                             <div key={item.id} className="carouselItem col"
                             onClick={()=> navigate(`/${item.media_type || endPoint}/${item.id}`)}>
                                 <div className="posterBlock">
@@ -60,7 +72,7 @@ const Carousel = ({data, loading, endPoint}) => {
                                     height={'294'} 
                                     alt={"movie poster image"} 
                                     />
-                                    <CircleRating rating={item.vote_average.toFixed(1)}/>
+                                    <CircleRating rating={item?.vote_average?.toFixed(1)}/>
                                     {/* <Genres data={item.genre_ids}/> */}
                                 </div>
                                 <div className="textBlock">
@@ -72,6 +84,10 @@ const Carousel = ({data, loading, endPoint}) => {
                                     </span>
                                 </div>
                             </div>
+                                    </>
+                                )
+                            }
+                            </>
                         )
                     })}
                 </div>

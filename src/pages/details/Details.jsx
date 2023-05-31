@@ -76,6 +76,11 @@ const Details = ({websiteName}) => {
       </Helmet>
       <PersonBanner data={person} loading={personLoading}/>
       <RelatedMovie mediaType={mediaType} id={id}/>
+      <div className="container-fluid">
+        <div className="container overflow-hidden bg-white rounded">
+          <Ads slot={9581863358}/>
+        </div>
+      </div>
       </>
     ) : (
       <>
@@ -101,11 +106,15 @@ const Details = ({websiteName}) => {
     </Helmet>
       )}
       <DetailBanner video={data?.results?.[0]} crew={credits?.crew}/>
-      <Ads/>
       <Cast data={credits} loading={creditLoading}/>
       <Videos data={data} loading={loading}/>
       <Simillar mediaType={mediaType} id={id}/>
       <Recommended mediaType={mediaType} id={id}/>
+      <div className="container-fluid">
+        <div className="container overflow-hidden bg-white rounded">
+          <Ads slot={9581863358}/>
+        </div>
+      </div>
       <Reviews mediaType={mediaType} id={id}/>
       </>
     ) }

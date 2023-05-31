@@ -7,6 +7,7 @@ import noResults from './../../assets/img/no-results.png'
 import Spinner from '../../components/spinner/Spinner'
 import './style.scss'
 import MovieCard from '../../components/movieCard/MovieCard'
+import Ads from '../../components/ads/Ads';
 const SearchResult = ({websiteName}) => {
   const [data, setData] = useState(null);
   const [pageNum, setPageNum] = useState(1);
@@ -62,6 +63,11 @@ console.log(data)
       <meta name="robots" content="index, follow"></meta>
       <link rel="canonical" href={`https://moviewalas.com/search/${query}`}/>
     </Helmet>
+    <div className="container-fluid">
+        <div className="container overflow-hidden bg-white rounded">
+          <Ads slot={9581863358}/>
+        </div>
+      </div>
     <section className='container-fluid searchResultsPage'>
       <div className="container">
         {loading && <Spinner initial={true}/>}
