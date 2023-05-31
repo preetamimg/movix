@@ -75,6 +75,11 @@ const Details = ({websiteName}) => {
       <link rel="canonical" href={`https://moviewalas.com/person/${person?.id}`}/>
       </Helmet>
       <PersonBanner data={person} loading={personLoading}/>
+      <div className="container-fluid">
+        <div className="container overflow-hidden bg-white rounded">
+          <Ads slot={9581863358}/>
+        </div>
+      </div>
       <RelatedMovie mediaType={mediaType} id={id}/>
       <div className="container-fluid">
         <div className="container overflow-hidden bg-white rounded">
@@ -106,6 +111,11 @@ const Details = ({websiteName}) => {
     </Helmet>
       )}
       <DetailBanner video={data?.results?.[0]} crew={credits?.crew}/>
+      <div className="container-fluid">
+        <div className="container overflow-hidden bg-white rounded">
+          <Ads slot={9581863358}/>
+        </div>
+      </div>
       <Cast data={credits} loading={creditLoading}/>
       <Videos data={data} loading={loading}/>
       <Simillar mediaType={mediaType} id={id}/>
