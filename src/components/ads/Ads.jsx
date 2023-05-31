@@ -6,7 +6,7 @@ const Ads = ({slot}) => {
     let params = useParams()
     useEffect(() => {
         (window.adsbygoogle = window.adsbygoogle || []).push({});
-  }, [params]);
+  }, []);
     return (
     <div className='d-block'>
             {/* <AdSense.Google

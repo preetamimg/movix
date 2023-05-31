@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import dayjs from "dayjs";
 import Img from "../lazyLoadImage/Img";
 import PosterFallback from "../../assets/img/no-poster.avif";
-import Ads from './../ads/Ads'
+// import Ads from './../ads/Ads'
 import './style.scss'
 import CircleRating from './../circleRating/CircleRating';
 
@@ -55,9 +55,9 @@ const Carousel = ({data, loading, endPoint}) => {
                             {
                                 item === 'item' ? (
                                     <>
-                                        <div className="carouselItem col">
+                                        {/* <div className="carouselItem col">
                                             <Ads slot={2747837599}/>
-                                        </div>
+                                        </div> */}
                                     </>
                                 ) : (
                                     <>
