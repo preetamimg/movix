@@ -7,6 +7,7 @@ import './style.scss'
 // import Genres from './../../../components/genres/Genres'
 import CircleRating from './../../../components/circleRating/CircleRating'
 import Img from './../../../components/lazyLoadImage/Img'
+import ShareImg from './../../../assets/img/Share.svg'
 import PosterFallback from './../../../assets/img/no-poster.avif'
 import {PlayIcon} from './../../../components/playIcon/PlayIcon'
 import VideoPopup from '../../../components/videoPopup/VideoPopup'
@@ -18,6 +19,7 @@ const DetailBanner = ({video, crew}) => {
     const Navigate = useNavigate();
     const {data, loading} = useFetch(`/${mediaType}/${id}`)
     const {url} = useSelector((state) => state.home)
+    console.log('movie', data)
 
     const director = crew?.filter((f)=> f.job === 'Director');
     const writer = crew?.filter((f)=> f.job === 'Screenplay' || f.job === "Writer" || f.job === "Story")
@@ -35,6 +37,22 @@ const DetailBanner = ({video, crew}) => {
     // console.log(data)
     let bgImg = url.backdrop_sizes_w780 + data?.backdrop_path;
     // let bgImg = url.backdrop_sizes_w1280 + data?.backdrop_path;
+
+    const handleShare = ()=> {
+        if (navigator.share) {
+            navigator.share({
+                title: data?.title || data?.name,
+                // text : 'Example Text',
+                url : window.location.href
+            }).then(()=> {
+                console.log('shared successfully')
+            }).catch((error)=> {
+                console.log('error' + error)
+            })
+        }else {
+            console.log('web share api not supported in this browser')
+        }
+    }
 
     return (
         <>
@@ -89,6 +107,13 @@ const DetailBanner = ({video, crew}) => {
                                                             <PlayIcon/>
                                                             <span className='text'>Watch Trailer</span>
                                                         </div>
+                                                    </div>
+                                                    <div className="col-auto">
+                                                        <button onClick={handleShare} 
+                                                        className="border-0 bg-transparent shadow-none d-flex align-items-center shareBtn">
+                                                            <span className='me-2 d-flex align-items-center justify-content-center rounded-circle imgOuter'>
+                                                            <img src={ShareImg} alt="share icon" /></span>
+                                                            Share</button>
                                                     </div>
                                                 </div>
                                             </div>

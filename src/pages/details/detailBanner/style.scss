@@ -68,6 +68,23 @@
                         cursor: pointer;
                     }
                 }
+                & .shareBtn {
+                    opacity: 0.9;
+                    color: $white;
+                    font-size: 18px;
+                    cursor: pointer;
+                    & .imgOuter {
+                        height: 50px;
+                        width: 50px;
+                        background-image: linear-gradient(-98.37deg, $theme1 0.99%, $theme2 100%);
+                        & img {
+                            height: 20px;
+                        }
+                    }
+                    &:hover {
+                        color: $theme2;
+                    }
+                }
                 & .rating {
                     width: 55px;
                     & .circleRating {
@@ -257,6 +274,13 @@
             }
             & .info {
                 font-size: 14px !important;
+            }
+            & .shareBtn {
+                font-size: 16px;
+                & .imgOuter {
+                    height: 40px;
+                    width: 40px;
+                }
             }
         }
     }
