@@ -16,6 +16,8 @@ import Footer from './components/footer/Footer'
 import PrivacyPolicy from './pages/privacyPolicy/PrivacyPolicy'
 import TermsOfUse from './pages/termsOfUse/TermsOfUse'
 import AboutUs  from './pages/aboutUs/AboutUs';
+import Blog from './pages/blog/Blog'
+import BlogDetail from './pages/blog/BlogDetail'
 
 function App() {
   // dispatch method action m data send krta h jis s wo store m save ho jyga
@@ -81,6 +83,8 @@ function App() {
         <Route path='/terms-and-conditions' exact element={<TermsOfUse websiteName={websiteName}/>}/>
         <Route path='/about-us' exact element={<AboutUs websiteName={websiteName}/>}/>
         <Route path='/:mediaType/gener/:genreName' element={<ExploreGeneres websiteName={websiteName}/>}/>
+        <Route path='/blog' exact element={<Blog websiteName={websiteName}/>}/>
+        <Route path='/blog-detail' exact element={<BlogDetail websiteName={websiteName}/>}/>
         {/* redirect routes */}
         <Route path='/person' element={<Navigate to="/"  websiteName={websiteName}/>}/>
         <Route path='/movie/gener' element={<Navigate to="/movie"  websiteName={websiteName}/>}/>
