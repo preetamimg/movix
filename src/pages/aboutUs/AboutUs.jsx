@@ -36,7 +36,7 @@ const AboutUs = ({websiteName}) => {
             <h2 className="col-12 px-0 text-light h5 fw-semibold pt-4 pb-3">Our Story</h2>
             <p className='col-12 px-0 text-light small'>At {`${websiteName}`}, we believe that everyone should have access to the latest movies and TV shows. That's why we created a platform that makes it easy to find and watch the entertainment you love.</p>
             <p className='col-12 px-0 text-light small'>Our journey started with a simple idea: to create a website that brings together all the latest movies and TV shows in one place. We knew that people were tired of spending hours searching for the latest releases, only to end up with low-quality copies or incomplete information. So we set out to create a website that would solve this problem once and for all.</p>
-            <h3 className="col-12 px-0 text-light h6 fw-semibold pt-4 pb-2">Meet Our Team</h3>
+            {/* <h3 className="col-12 px-0 text-light h6 fw-semibold pt-4 pb-2">Meet Our Team</h3>
             <p className='col-12 px-0 text-light small'>Here are some of the key members of our team:</p>
             <div className="col-12 px-0">
               <div className="row gy-4">
@@ -134,7 +134,7 @@ const AboutUs = ({websiteName}) => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             <p className='col-12 px-0 text-light small pt-4'>We are proud to have such a talented and dedicated team working on {`${websiteName}`}. Together, we are committed to providing our users with the best possible experience when it comes to discovering new movies and TV shows.</p>
             <h2 className="col-12 px-0 text-light h5 fw-semibold pt-4 pb-3">Our Mission</h2>
             <p className='col-12 px-0 text-light small'>Our mission at {`${websiteName}`} is to be the go-to platform for movie and TV show lovers everywhere. We strive to provide the most up-to-date information on all the latest releases, along with ratings, reviews, and trailers to help you make informed decisions about what to watch next.</p>

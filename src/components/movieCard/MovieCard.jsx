@@ -34,7 +34,11 @@ const MovieCard = ({ data, fromSearch, mediaType }) => {
                 alt={"movie poster image"}
                 />
                 {!fromSearch && (
-                    <CircleRating rating={data.vote_average.toFixed(1)}/>
+                    <>
+                    {data?.vote_average > 0 ? (
+                        <CircleRating rating={data?.vote_average.toFixed(1)}/>
+                    ) : ('')}
+                    </>
                 )}
             </div>
             <div className="textBlock">

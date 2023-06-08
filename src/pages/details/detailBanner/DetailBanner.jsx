@@ -42,7 +42,7 @@ const DetailBanner = ({video, crew}) => {
         if (navigator.share) {
             navigator.share({
                 title: data?.title || data?.name,
-                // text : 'Example Text',
+                text : 'Check out this awesome movie website!',
                 url : window.location.href
             }).then(()=> {
                 console.log('shared successfully')
@@ -93,11 +93,18 @@ const DetailBanner = ({video, crew}) => {
                                             </div>
                                             <div className="col-12">
                                                 <div className="row align-items-center">
-                                                    <div className="col-auto">
-                                                        <div className="rating">
-                                                            <CircleRating rating={data?.vote_average.toFixed(1)}/>
+                                                    {data?.vote_average > 0 ? (
+                                                        <div className="col-auto">
+                                                            <div className="rating">
+                                                                <CircleRating rating={data?.vote_average.toFixed(1)}/>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                    ) : (
+                                                        <div className="col-12 info my-2">
+                                                            <span></span><span> sorry we don't have Reviews for {data?.title || data?.name} yet</span>
+                                                        </div>
+                                                    )}
+                                                    {video?.key ? (
                                                     <div className="col-auto">
                                                         <div className="playbtn"
                                                         onClick={()=> {
@@ -108,6 +115,11 @@ const DetailBanner = ({video, crew}) => {
                                                             <span className='text'>Watch Trailer</span>
                                                         </div>
                                                     </div>
+                                                    ) : (
+                                                        <div className="col-12 info my-2 mb-3">
+                                                            <span></span><span> sorry we don't have any Video for {data?.title || data?.name} yet</span>
+                                                        </div>
+                                                    )}
                                                     <div className="col-auto">
                                                         <button onClick={handleShare} 
                                                         className="border-0 bg-transparent shadow-none d-flex align-items-center shareBtn">
@@ -117,36 +129,46 @@ const DetailBanner = ({video, crew}) => {
                                                     </div>
                                                 </div>
                                             </div>
+                                            {data?.overview ? (
+                                                
                                             <div className="col-12 overview">
-                                                <div className="heading">Overview :</div>
-                                                <div className="overViewText">{data?.overview}</div>
+                                            <div className="heading">Overview :</div>
+                                            <div className="overViewText">{data?.overview}</div>
+                                        </div>
+                                            ) : (
+                                                <div className="col-12 info my-2 mb-3">
+                                                <span></span><span> sorry we don't have any overview for {data?.title || data?.name} yet</span>
                                             </div>
-                                            {data?.status && data?.release_date && data?.runtime &&   <div className="col-12">
+                                            )}  
+                                            <div className="col-12">
                                                 <div className="row mx-0">
                                                         {
-                                                            data?.status && 
-                                                            <div className="col-auto ps-0 info mb-1 mb-lg-0">
-                                                                <span>Status : </span>
-                                                                <span>{data.status}</span>
-                                                            </div>
+                                                            data?.status ? (
+                                                                <div className="col-auto ps-0 info mb-1 mb-lg-0">
+                                                                    <span>Status : </span>
+                                                                    <span>{data.status}</span>
+                                                                </div>
+                                                            ) : ('')
                                                         }
                                                         {
-                                                            data?.release_date && 
+                                                            data?.release_date ? (
+                                                                
                                                             <div className="col-auto ps-0 info mb-1 mb-lg-0">
-                                                                <span>Release Date : </span>
-                                                                <span>{dayjs(data.release_date).format("MMM D, YYYY")}</span>
-                                                            </div>
+                                                            <span>Release Date : </span>
+                                                            <span>{dayjs(data.release_date).format("MMM D, YYYY")}</span>
+                                                        </div>
+                                                            ) : ('')
                                                         }
                                                         {
-                                                            data?.runtime && 
-                                                            <div className="col-auto ps-0 info mb-1 mb-lg-0">
-                                                                <span>Runtime : </span>
-                                                                <span>{toHoursAndMinutes(data.runtime)}</span>
-                                                            </div>
+                                                            data?.runtime ? (
+                                                                <div className="col-auto ps-0 info mb-1 mb-lg-0">
+                                                                    <span>Runtime : </span>
+                                                                    <span>{toHoursAndMinutes(data.runtime)}</span>
+                                                                </div>
+                                                            ) : ('') 
                                                         }
                                                 </div>
                                             </div>
-                                            }
                                             {director?.length > 0 && 
                                             <div className='col-12 info mt-2'>
                                                 <span>Director : </span>

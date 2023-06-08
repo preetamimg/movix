@@ -120,9 +120,9 @@ const Header = () => {
                             </div>
                             )
                         }
-                        <div className="position-absolute top-100 start-0 w-100 searchBox text-white py-2 py-sm-2 bg-dark">
+                        <div className="position-absolute top-100 start-0 w-100 searchBox text-white py-2 py-sm-2">
                             <div className="container position-relative">
-                            <input type="search" 
+                            <input type="text" 
                             className="form-control shadow-none border-0" 
                             placeholder="Search for movie and tv show..."
                             onChange={(e)=>setQuery(e.target.value)}

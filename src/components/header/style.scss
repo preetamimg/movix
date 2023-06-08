@@ -23,6 +23,7 @@
     }
     & .searchBox {
         transform: translateY(-300%);
+        background-image: linear-gradient(to bottom, $theme3, darken($theme3, 5) 300px);
         & .form-control {
             background-color: transparent !important;
             box-shadow: none !important;

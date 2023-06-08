@@ -72,7 +72,10 @@ const Carousel = ({data, loading, endPoint}) => {
                                     height={'294'} 
                                     alt={"movie poster image"} 
                                     />
+
+                                    {item?.vote_average > 0 ? (
                                     <CircleRating rating={item?.vote_average?.toFixed(1)}/>
+                                    ) : ('')}
                                     {/* <Genres data={item.genre_ids}/> */}
                                 </div>
                                 <div className="textBlock">
