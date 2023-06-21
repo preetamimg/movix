@@ -71,7 +71,7 @@ function App() {
   return (
     <>
     <Router>
-      <Header/>
+      {/* <Header/> */}
       <main>
       <Routes>
         <Route path='/' element={<Home websiteName={websiteName}/>}/>
@@ -93,7 +93,7 @@ function App() {
         <Route path='*' element={<PageNotFound websiteName={websiteName}/>}/>
       </Routes>
       </main>
-      <Footer/>
+      {/* <Footer/> */}
     </Router>
     </>
   );

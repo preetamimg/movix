@@ -1,7 +1,24 @@
 @import './../../variables';
+
+nav {
+    & .breadcrumb {
+        margin: 0;
+        & .breadcrumb-item {
+            color: $secondary;
+            font-size: 16px;
+            & a {
+                color: $secondary;
+            }
+            &.active {
+                color: $theme1;
+            }
+        }
+    }
+}
+
 .blogSectionHeading {
-    font-size: 40px;
-    color: $white;
+    font-size: 38px;
+    color: $black;
     font-weight: 600;
 }
 .blogCard {
@@ -36,7 +53,7 @@
     & .card-body {
         padding: 18px 0px 0px 0px;
         & .card-subtitle{
-            font-size: 12px;
+            font-size: 13px;
             opacity: 0.5;
             color: $white;
         }
@@ -68,15 +85,18 @@
 }
 
 .blogDetailPage {
+    & .sectionHeading {
+        color: $black;
+    }
     & .blogHeading {
         font-size: 30px;
         font-weight: 600;
-        color: $white;
+        color: $black;
     }
     & .blogSubHeading {
         font-size: 20px;
         font-weight: 500;
-        color: $white;
+        color: $black;
         filter: brightness(0.8);
     }
     & .userImg {
@@ -94,54 +114,42 @@
     }
     & .userName {
         font-size: 18px;
-        color: $white;
+        color: $black;
         font-weight: 500;
     }
     & .blogTimeDate {
         font-size: 14px;
-        color: $white;
+        color: $black;
         font-weight: normal;
         filter: brightness(0.5);
     }
-    & .likeIcon {
-        padding: 0;
-        height: 25px;
+    & .socialIcon {
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        padding: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        background-color: $light;
         & img {
             height: 100%;
         }
-    }
-    & .chatIcon {
-        padding: 0;
-        height: 25px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        & img {
-            height: 100%;
-        }
-    }
-    & .shareImg {
-        padding: 0;
-        height: 25px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        & img {
-            height: 100%;
+        &:hover {
+            box-shadow: 0px 0px 7px -3px $secondary;
         }
     }
     & .blogHeadings {
         font-size: 20px;
         font-weight: 700;
-        color: $white;
+        color: $black;
     }
     & .blogTexts {
         font-size: 16px;
         font-weight: 500;
-        color: $white;
+        color: $black;
     }
     & .userCommentBox {
         & .userImg {
@@ -154,30 +162,28 @@
         & .userName {
             font-size: 19px;
             font-weight: 600;
-            color: $white;
+            color: $black;
         }
         & .timeDateText {
             font-size: 13px;
             font-weight: 500;
-            color: $white;
-            opacity: 0.5;
+            color: $black;
         }
         & .replyBtn {
             font-size: 15px;
             font-weight: 600;
-            color: $white;
-            opacity: 0.5;
+            color: $theme1;
+            cursor: pointer;
         }
         & .commentText {
             font-size: 15px;
             font-weight: 400;
-            color: $white;
+            color: $black;
         }
     }
     & .commentForm {
         & .form-label {
-            color: $white;
-            opacity: 0.5;
+            color: $black;
         }
         & .form-control {
             background-color: transparent;
@@ -190,8 +196,119 @@
             }
         }
         & .form-check-label {
-            color: $white;
-            opacity: 0.5;
+            color: $black;
+        }
+    }
+    .cardHeading {
+        font-size: 20px;
+        font-weight: 600;
+        color: $black;
+    }
+
+}
+
+@media only screen and (max-width:767.99px) {
+    .blogSectionHeading {
+        font-size: 20px;
+    }
+    .blogCard {
+        & .cardImg {
+            & img {
+            }
+            &::before {
+            }
+        }
+        & .card-body {
+            & .card-subtitle{
+                font-size: 12px;
+            }
+            & .card-title {
+                font-size: 14px;
+                line-height: 18px;
+            }
+        }
+        &:hover {
+            & .cardImg {
+                & img {
+                }
+                &::before {
+                }
+            }
+        }
+    }
+
+    .blogDetailPage {
+        & .blogHeading {
+            font-size: 20px;
+        }
+        & .blogSubHeading {
+            font-size: 16px;
+        }
+        & .userImg {
+            height: 30px;
+            width: 30px;
+            & img {
+            }
+        }
+        & .userName {
+            font-size: 14px;
+        }
+        & .blogTimeDate {
+            font-size: 12px;
+        }
+        & .likeIcon {
+            height: 18px;
+            & img {
+            }
+        }
+        & .chatIcon {
+            height: 18px;
+            & img {
+            }
+        }
+        & .shareImg {
+            height: 18px;
+            & img {
+            }
+        }
+        & .blogHeadings {
+            font-size: 16px;
+        }
+        & .blogTexts {
+            font-size: 13px;
+        }
+        & .userCommentBox {
+            & .userImg {
+                width: 30px;
+                height: 30px;
+            }
+            & .userName {
+                font-size: 14px;
+            }
+            & .timeDateText {
+                font-size: 12px;
+            }
+            & .replyBtn {
+                font-size: 12px;
+            }
+            & .commentText {
+                font-size: 13px;
+            }
+        }
+        & .commentForm {
+            & .form-label {
+                font-size: 14px;
+            }
+            & .form-control {
+                font-size: 14px;
+            }
+            & .form-check-input{
+                & :checked[type=checkbox] {
+                }
+            }
+            & .form-check-label {
+                font-size: 14px;
+            }
         }
     }
 }

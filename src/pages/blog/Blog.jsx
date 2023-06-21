@@ -11,7 +11,7 @@ const Blog = ()=>{
                         Blogs
                     </div>
                     <div className="col-12">
-                        <div className="row row-cols-4 g-4">
+                        <div className="row row-cols-xl-4 row-cols-md-3 row-cols-2 g-sm-4 g-3">
                             <div className="col">
                                 <div className="card bg-transparent rounded-0 border-0 blogCard">
                                     <div className="cardImg">
